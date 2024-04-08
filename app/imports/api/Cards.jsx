@@ -19,7 +19,7 @@ class CardsCollection {
             image: String, //link to image
             backtext: String, // Prof Johnson teaches ICS 314, and built OpenPowerQuality
             owner: String, //user that the card belongs to
-            isSale:{ type: Boolean, default: false}   //is the card for sale on the marketplace?
+            isForSale:{ type: Boolean, default: false}   //is the card for sale on the marketplace?
         });
 
         // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

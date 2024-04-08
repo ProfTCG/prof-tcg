@@ -12,13 +12,13 @@ class CardsCollection {
         this.collection = new Mongo.Collection(this.name);
         // Define the structure of each document in the collection.
         //TODO:determine what goes in card schema
-        this.schema = new SimpleSchema({
-            firstname: String,
-            lastname: String,
-            address: String,
-            image: String,
-            description: String,
-            owner: String });
+        //TODO:determine method to determine rarity
+        this.schema = new SimpleSchema({ // prof johnson example in comments
+            profname: String, //Philip Johnson
+            rarity: String, // dependent on some factors
+            image: String, //link to image
+            backtext: String, // Prof Johnson teaches ICS 314, and built OpenPowerQuality
+            owner: String }); //user that the card belongs to
 
         // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
         this.collection.attachSchema(this.schema);

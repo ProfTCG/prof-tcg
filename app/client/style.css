@@ -1,0 +1,52 @@
+/* Use Open Sans as the default sans serif font. */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Source+Code+Pro:300,400,500,700");
+
+/* Set up some CSS variables to theme the application. */
+:root {
+  --matr-navbar-bg: #212121;
+  --matr-navbar-bg-rgb: 33, 33, 33;
+  --matr-navbar-text-color: #FBFCFC;
+  --matr-navbar-highlight-text: #797D7F;
+}
+
+/* Change bootstrap variable values.
+ See https://getbootstrap.com/docs/5.2/customize/css-variables/
+ */
+body {
+  --bs-light-rgb: var(--matr-navbar-bg-rgb);
+}
+
+/* Set the alert background on the signin and signup pages. */
+#signin-page .alert-light, #signup-page .alert-light {
+  --bs-alert-bg: var(--matr-navbar-bg);
+}
+
+/* Define custom styles */
+.gray-background {
+  background-color: var(--matr-navbar-bg);
+  color: var(--bs-dark);
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+footer, footer a {
+  color: var(--matr-navbar-text-color);
+}
+
+body .navbar {
+  --bs-navbar-active-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--matr-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-color: var(--matr-navbar-text-color);
+  --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
+}
+
+.bg-dark a.dropdown-item {
+  color: var(--matr-navbar-bg);
+}
+
+hr.style-two {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}

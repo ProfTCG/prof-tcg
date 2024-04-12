@@ -50,3 +50,23 @@ hr.style-two {
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+
+.custom-carousel {
+  top: 50px;
+  display: block;
+  margin: auto;
+}
+
+.your-cards {
+  width: 250px;
+  margin: auto;
+  display: block;
+}
+
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+.carousel-control-prev-icon {
+  filter: invert(100%);
+}

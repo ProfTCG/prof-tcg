@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The Cards Collection. It encapsulates state and variable values for stuff.
+ * The Cards Collection. It encapsulates state and variable values for cards.
  */
 class CardsCollection {
   constructor() {
@@ -14,10 +14,10 @@ class CardsCollection {
     // TODO:determine what goes in card schema
     // TODO:determine method to determine rarity
     this.schema = new SimpleSchema({ // prof johnson example in comments
-      profname: String, // Philip Johnson
+      profName: String, // Philip Johnson
       rarity: String, // dependent on some factors
       image: String, // link to image
-      backtext: String, // Prof Johnson teaches ICS 314, and built OpenPowerQuality
+      backText: String, // Prof Johnson teaches ICS 314, and built OpenPowerQuality
       owner: String, // user that the card belongs to
       isForSale: Boolean, // is the card for sale on the marketplace?
     });

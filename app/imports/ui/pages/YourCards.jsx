@@ -69,7 +69,7 @@ const YourCards = () => {
         </Col>
       </Row>
     </Container>
-  ) : <LoadingSpinner/>);
+  ) : <LoadingSpinner />);
 };
 
 export default YourCards;

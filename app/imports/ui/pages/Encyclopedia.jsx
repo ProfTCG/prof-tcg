@@ -1,6 +1,15 @@
 import React from 'react';
 import { Image, Col, Container, Row } from 'react-bootstrap';
 
+const sampleCards = [
+  {
+    profName: 'Chad Morita',
+    rarity: 3,
+    image: '/images/card-frame.png',
+    backText: 'Chad Morita is a first year instructor yada yada',
+  },
+];
+
 /* Renders the Encyclopedia page for all cards. */
 const Encyclopedia = () => (
   <Container id="encyclopedia" fluid className="py-3">

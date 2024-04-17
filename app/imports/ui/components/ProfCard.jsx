@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Image } from 'react-bootstrap';
-import SimpleSchema from 'simpl-schema';
 
 /** Renders a single professor trading card in the Encyclopedia. See pages/Encyclopedia.jsx. */
 const ProfCard = ({ profCard }) => (

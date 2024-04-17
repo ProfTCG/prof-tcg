@@ -13,5 +13,16 @@
       "email": "john@foo.com",
       "password": "changeme"
     }
+  ],
+  "defaultCards":[
+    {
+"profname": "Philip Johnson",
+"rarity": "legendary",
+"image": "placeholder",
+"backtext": "Prof Johnson teaches ICS 314, and built OpenPowerQuality",
+"owner": "admin@foo.com",
+"isForSale": "true"
+    }
+
   ]
 }

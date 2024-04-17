@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
-// import { Cards } from '../../api/stuff/Cards';
+import { Cards } from '../../api/stuff/Cards';
 
 const Marketplace = () => (
   <Container>
@@ -16,8 +16,8 @@ const Marketplace = () => (
         <h2>Card List</h2>
         <p>These cards are for sale!</p>
         <ul>
-          <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} />
-          {/* {Cards.collection.find().map((card) => <li key={card._id}>{card.profname}</li>)} */}
+          {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
+          {Cards.collection.find({isForSale: true}).map((card) => <li key={card._id}>{card.profName}</li>)}
         </ul>
         <ul>Make Trade Request Button</ul>
       </Col>

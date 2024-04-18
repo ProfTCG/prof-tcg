@@ -6,8 +6,9 @@ const sampleCards = [
   {
     profName: 'Chad Morita',
     rarity: 3,
-    image: '/images/card-frame.png',
-    backText: 'Chad Morita is a first year instructor yada yada',
+    border: '/images/card-frame.png',
+    profImage: '/images/morita-card.jpg',
+    backText: 'on da back: Chad Morita is a first year instructor yada yada',
   },
 ];
 

@@ -4,9 +4,15 @@ import PropTypes from 'prop-types';
 /** Renders a single professor trading card in the Encyclopedia. See pages/Encyclopedia.jsx. */
 const ProfCard = ({ profCard }) => (
   // TODO: Determine display format, determine card schema(s). See stuff/Cards.js
-  <div style={{ backgroundImage: `url(${profCard.image})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '300px', height: '400px' }}>
-    <p>{profCard.profName}</p>
-    <p>{profCard.rarity}</p>
+  <div className="container">
+    <img
+      style={{ backgroundImage: `url(${profCard.profImage})`, backgroundRepeat: 'no-repeat', backgroundSize: '264px 350px', backgroundPosition: 'center', width: '300px', height: '400px' }}
+      src={profCard.border}
+      alt="professor card"
+    />
+
+    <div className="top-left">{profCard.profName}</div>
+    <div className="bottom-left">{profCard.rarity}</div>
     <p>{profCard.backText}</p>
   </div>
 );
@@ -16,7 +22,9 @@ ProfCard.propTypes = {
   profCard: PropTypes.shape({
     profName: PropTypes.string,
     rarity: PropTypes.number,
-    image: PropTypes.string,
+    border: PropTypes.string,
+    profImage: PropTypes.string,
+    backImage: PropTypes.string,
     backText: PropTypes.string,
   }).isRequired,
 };

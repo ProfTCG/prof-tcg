@@ -1,5 +1,16 @@
 import React from 'react';
 import { Image, Col, Container, Row } from 'react-bootstrap';
+import ProfCard from '../components/ProfCard';
+
+const sampleCards = [
+  {
+    profName: 'Chad Morita',
+    rarity: 3,
+    border: '/images/card-frame.png',
+    profImage: '/images/edo-card.jpg',
+    backText: 'on da back: Chad Morita is a first year instructor yada yada',
+  },
+];
 
 /* Renders the Encyclopedia page for all cards. */
 const Encyclopedia = () => (
@@ -24,6 +35,7 @@ const Encyclopedia = () => (
     <Row className="align-middle text-center py-4 px-5">
       <Col>
         <h2 className="py-3">1 Star Cards</h2>
+        {sampleCards.map((prof, index) => (<Col key={index}><ProfCard profCard={prof} /></Col>))}
         <p>In progress!</p>
       </Col>
     </Row>
@@ -36,8 +48,8 @@ const Encyclopedia = () => (
     <Row className="align-middle text-center py-4 px-5">
       <Col>
         <h2 className="py-3">3 Star Cards</h2>
-        <Image className="px-2" src="/images/johnson-card-mockup.png" height={175} />
-        <Image className="px-2" src="/images/moore-card-mockup.png" height={175} />
+        <Image className="px-5" src="/images/johnson-card-mockup.png" height={400} />
+        <Image className="px-5" src="/images/moore-card-mockup.png" height={400} />
       </Col>
     </Row>
   </Container>

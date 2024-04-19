@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Button } from 'react-bootstrap';
 import ProfCard from '../components/ProfCard';
 
 const sampleCards =
@@ -11,8 +11,6 @@ const sampleCards =
         profImage: '/images/morita-card.jpg',
         backText: 'on da back: Chad Morita is a first year instructor yada yada',
         isForSale: false,
-
-
       },
       {
         profName: 'Edo',
@@ -41,8 +39,9 @@ const Marketplace = () => (
         <ul>
           {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
           {sampleCards.filter(prof => prof.isForSale).map((prof, index) => (<Col key={index}><ProfCard profCard={prof} /></Col>))}
+          <Button>Make Trade</Button>
         </ul>
-        <ul>Make Trade Request Button</ul>
+
       </Col>
     </Row>
 

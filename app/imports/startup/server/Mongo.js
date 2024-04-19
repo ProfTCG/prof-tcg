@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Cards } from '../../api/stuff/Card.js';
+import { Cards } from '../../api/stuff/Cards.js';
 
 /* eslint-disable no-console */
 

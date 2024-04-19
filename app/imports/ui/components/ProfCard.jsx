@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Modal from 'react-bootstrap/Modal';
 
 /** Renders a single professor trading card in the Encyclopedia. See pages/Encyclopedia.jsx. */
-const ProfCard = ({ profCard }) => (
+const ProfCard = ({ profCard }) => {
   // TODO: Determine display format, determine card schema(s). See stuff/Cards.js
-  <div className="container">
-    <img
-      style={{ backgroundImage: `url(${profCard.profImage})`, backgroundRepeat: 'no-repeat', backgroundSize: '264px 350px', backgroundPosition: 'center', width: '300px', height: '400px' }}
-      src={profCard.border}
-      alt="professor card"
-    />
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  return (
+    <>
+      <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {profCard.profName}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p><strong>Rarity:</strong> {profCard.rarity} Stars</p>
+          {profCard.backText}
+        </Modal.Body>
+      </Modal>
 
-    <div className="top-left">{profCard.profName}</div>
-    <div className="bottom-left">{profCard.rarity}</div>
-    <p>{profCard.backText}</p>
-  </div>
-);
+      <div className="container">
+        <img
+          style={{
+            backgroundImage: `url(${profCard.profImage})`,
+            backgroundRepeat: 'no-repeat', backgroundSize: '264px 350px',
+            backgroundPosition: 'center', width: '300px', height: '400px',
+            cursor: 'pointer',
+          }}
+          src={profCard.border}
+          alt="professor card"
+          onClick={handleShow}
+        />
+
+        <div className="top-left">{profCard.profName}</div>
+        <div className="bottom-left">{profCard.rarity}</div>
+      </div>
+    </>
+  );
+};
 
 // Require a document to be passed to this component.
 ProfCard.propTypes = {

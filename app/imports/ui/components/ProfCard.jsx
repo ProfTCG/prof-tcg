@@ -26,6 +26,7 @@ ProfCard.propTypes = {
     profImage: PropTypes.string,
     backImage: PropTypes.string,
     backText: PropTypes.string,
+      isForSale: PropTypes.boolean,
   }).isRequired,
 };
 

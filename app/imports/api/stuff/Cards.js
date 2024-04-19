@@ -15,8 +15,10 @@ class CardsCollection {
     // TODO:determine method to determine rarity
     this.schema = new SimpleSchema({ // prof johnson example in comments
       profName: String, // Philip Johnson
-      rarity: String, // dependent on some factors
-      image: String, // link to image
+      rarity: Number, // dependent on some factors
+      profImage: String, // link to image //I think this MUST be SQUARE
+      border: String, //border thing
+      backImage: String, //bg image if nesc - does not work rn
       backText: String, // Prof Johnson teaches ICS 314, and built OpenPowerQuality
       owner: String, // user that the card belongs to
       isForSale: Boolean, // is the card for sale on the marketplace?

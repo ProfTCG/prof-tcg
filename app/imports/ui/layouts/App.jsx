@@ -21,7 +21,6 @@ import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
 import YourCards from '../pages/YourCards';
 
-
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {

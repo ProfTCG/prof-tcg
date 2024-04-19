@@ -5,12 +5,12 @@
   },
   "defaultAccounts": [
     {
-      "email": "admin@foo.com",
+      "username": "testAdmin",
       "password": "changeme",
       "role": "admin"
     },
     {
-      "email": "john@foo.com",
+      "username": "testJohn",
       "password": "changeme"
     }
   ],

@@ -70,3 +70,22 @@ hr.style-two {
 .carousel-control-prev-icon {
   filter: invert(100%);
 }
+
+/* Top left text */
+/* for prof names */
+.top-left {
+  position:absolute;
+  top: 30px;
+  left: 550px;
+  color: white;
+}
+/* for stars */
+.bottom-left{
+  position:absolute;
+  bottom: 50px;
+  left: 550px;
+  color: white;
+}
+.container {
+  position: relative;
+}

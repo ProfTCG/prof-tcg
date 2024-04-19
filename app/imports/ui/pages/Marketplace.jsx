@@ -3,16 +3,28 @@ import { Col, Container, Row } from 'react-bootstrap';
 import ProfCard from '../components/ProfCard';
 
 const sampleCards =
-    [{
-    profName: 'Chad Morita',
-    rarity: 3,
-    border: '/images/card-frame.png',
-    profImage: '/images/edo-card.jpg',
-    backText: 'on da back: Chad Morita is a first year instructor yada yada',
+    [
+      {
+        profName: 'Chad Morita',
+        rarity: 3,
+        border: '/images/card-frame.png',
+        profImage: '/images/morita-card.jpg',
+        backText: 'on da back: Chad Morita is a first year instructor yada yada',
+        isForSale: false,
 
 
+      },
+      {
+        profName: 'Edo',
+        rarity: 3,
+        border: '/images/card-frame.png',
+        profImage: '/images/edo-card.jpg',
+        backText: 'on da back: Chad Morita is a first year instructor yada yada',
+        isForSale: true,
 
-  }];
+      },
+
+    ];
 
 const Marketplace = () => (
   <Container>
@@ -28,7 +40,7 @@ const Marketplace = () => (
         <p>These cards are for sale!</p>
         <ul>
           {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
-            {sampleCards.map((prof, index) => (<Col key={index}><ProfCard profCard={prof} /></Col>))}
+          {sampleCards.filter(prof => prof.isForSale).map((prof, index) => (<Col key={index}><ProfCard profCard={prof} /></Col>))}
         </ul>
         <ul>Make Trade Request Button</ul>
       </Col>

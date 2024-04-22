@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/Modal';
+import { Image } from 'react-bootstrap';
 
 /** Renders a single professor trading card in the Encyclopedia. See pages/Encyclopedia.jsx. */
 const ProfCard = ({ profCard }) => {
@@ -23,16 +24,24 @@ const ProfCard = ({ profCard }) => {
       </Modal>
 
       <div className="container">
-        <img
+        <Image
           style={{
             backgroundImage: `url(${profCard.profImage})`,
-            backgroundRepeat: 'no-repeat', backgroundSize: '264px 350px',
-            backgroundPosition: 'center', width: '300px', height: '400px',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '264px 350px',
+            backgroundPosition: 'center',
+            width: '300px',
+            height: '400px',
             cursor: 'pointer',
           }}
           src={profCard.border}
           alt="professor card"
           onClick={handleShow}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === 'Space') {
+              handleShow();
+            }
+          }}
         />
 
         <div className="top-left">{profCard.profName}</div>
@@ -51,6 +60,7 @@ ProfCard.propTypes = {
     profImage: PropTypes.string,
     backImage: PropTypes.string,
     backText: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
 };
 

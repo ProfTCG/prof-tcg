@@ -19,15 +19,15 @@ if (Stuffs.collection.find().count() === 0) {
 }
 
 // Initialize the database with default cards.
-const addCards = (card) => {
-  console.log(`Adding ${card.profName}`);
-  Cards.collection.insert(card);
+const addCards = (data) => {
+  console.log(`Adding ${data.profName}`);
+  Cards.collection.insert(data);
 };
 
 // Initialize the Cards collection if empty.
 if (Cards.collection.find().count() === 0) {
   if (Meteor.settings.defaultCards) {
     console.log('Creating default cards.');
-    Meteor.settings.defaultCards.forEach(card => addCards(card));
+    Meteor.settings.defaultCards.forEach(data => addCards(data));
   }
 }

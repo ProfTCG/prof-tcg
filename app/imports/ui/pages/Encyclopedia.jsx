@@ -6,16 +6,6 @@ import { Cards } from '../../api/stuff/Cards';
 import ProfCard from '../components/ProfCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-const sampleCards = [
-  {
-    profName: 'Chad Morita',
-    rarity: 3,
-    border: '/images/card-frame.png',
-    profImage: '/images/edo-card.jpg',
-    backText: 'on da back: Chad Morita is a first year instructor yada yada',
-  },
-];
-
 /* Renders the Encyclopedia page for all cards. */
 const Encyclopedia = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -54,15 +44,18 @@ const Encyclopedia = () => {
       <Row className="align-middle text-center py-4 px-5">
         <Col>
           <h2 className="py-3">1 Star Cards</h2>
-          {sampleCards.map((card, index) => (<Col key={index}><ProfCard profCard={card} /></Col>))}
-          {cards.map((card) => (<Col key={card._id}><ProfCard profCard={card} /></Col>))}
-          <p>In progress!</p>
+          <Row>
+            {cards.map((card) => (<Col key={card._id}><ProfCard profCard={card} /></Col>))}
+          </Row>
         </Col>
       </Row>
       <Row className="align-middle text-center py-4 px-5">
         <Col>
           <h2 className="py-3">2 Star Cards</h2>
-          <p>In progress!</p>
+          <p>
+            In progress!<br />
+            More coming soon!
+          </p>
         </Col>
       </Row>
       <Row className="align-middle text-center py-4 px-5">

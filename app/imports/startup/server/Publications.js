@@ -34,8 +34,5 @@ Meteor.publish(null, function () {
 // User-level publication.
 // If logged in, then publish all cards. Otherwise, publish nothing.
 Meteor.publish(Cards.userPublicationName, function () {
-  if (this.userId) {
-    return Cards.collection.find();
-  }
-  return this.ready();
+  return Cards.collection.find();
 });

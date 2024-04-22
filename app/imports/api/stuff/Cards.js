@@ -17,8 +17,8 @@ class CardsCollection {
       profName: String, // Philip Johnson
       rarity: Number, // dependent on some factors
       profImage: String, // link to image //I think this MUST be SQUARE
-      border: String, //border thing
-      backImage: String, //bg image if nesc - does not work rn
+      border: String, // border thing
+      backImage: String, // bg image if nesc - does not work rn
       backText: String, // Prof Johnson teaches ICS 314, and built OpenPowerQuality
       owner: String, // user that the card belongs to
       isForSale: Boolean, // is the card for sale on the marketplace?

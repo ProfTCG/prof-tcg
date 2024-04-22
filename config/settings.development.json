@@ -19,7 +19,8 @@
       "profName": "Chad Morita",
       "rarity": "3",
       "border": "/images/card-frame.png",
-      "image": "/images/edo-card.jpg",
+      "profImage": "/images/edo-card.jpg",
+      "backImage": "/images/edo-card.jpg",
       "backText": "on da back: Chad Morita is a first year instructor yada yada",
       "owner": "john@foo.com",
       "isForSale": true
@@ -28,7 +29,8 @@
       "profName": "Lucas Horsman",
       "rarity": "4",
       "border": "/images/card-frame.png",
-      "image": "/images/edo-card.jpg",
+      "profImage": "/images/edo-card.jpg",
+      "backImage": "/images/edo-card.jpg",
       "backText": "Lucas is not a professor",
       "owner": "john@foo.com",
       "isForSale": false

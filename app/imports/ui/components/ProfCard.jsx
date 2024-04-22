@@ -58,9 +58,7 @@ ProfCard.propTypes = {
     rarity: PropTypes.number,
     border: PropTypes.string,
     profImage: PropTypes.string,
-    backImage: PropTypes.string,
     backText: PropTypes.string,
-      isForSale: PropTypes.boolean,
   }).isRequired,
 };
 

@@ -60,7 +60,6 @@ ProfCard.propTypes = {
     profImage: PropTypes.string,
     backImage: PropTypes.string,
     backText: PropTypes.string,
-    _id: PropTypes.string,
   }).isRequired,
 };
 

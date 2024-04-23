@@ -10,7 +10,7 @@ const sampleCards =
         border: '/images/card-frame.png',
         profImage: '/images/morita-card.jpg',
         backText: 'on da back: Chad Morita is a first year instructor yada yada',
-        isForSale: false,
+        isForSale: true,
       },
       {
         profName: 'Edo',
@@ -38,8 +38,7 @@ const Marketplace = () => (
         <p>These cards are for sale!</p>
         <ul>
           {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
-          {sampleCards.filter(prof => prof.isForSale).map((prof, index) => (<Col key={index}><ProfCard profCard={prof} /></Col>))}
-          <Button>Make Trade</Button>
+          {sampleCards.filter(prof => prof.isForSale).map((prof, index) => (<Row><Col key={index}><ProfCard profCard={prof} /></Col><Row><Button>Make Trade</Button></Row></Row>))}
         </ul>
 
       </Col>

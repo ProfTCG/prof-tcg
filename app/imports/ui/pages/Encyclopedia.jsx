@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Image, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Cards } from '../../api/stuff/Cards';
 import ProfCard from '../components/ProfCard';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -12,17 +12,36 @@ const Encyclopedia = () => {
   const { ready, cards } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+    // Get access to cards.
     const subscription = Meteor.subscribe(Cards.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Stuff documents
-    const cardsList = Cards.collection.find({}).fetch();
+    // Get the cards
+    const cardsList = Cards.collection.find().fetch();
     return {
       cards: cardsList,
       ready: rdy,
     };
   }, []);
+
+  const renderCards = (rarity) => {
+    const filteredCards = cards.filter(function (card) { return card.rarity === rarity; });
+    return (
+      <Row className="align-middle text-center py-4 px-5">
+        <Col>
+          <h2 className="py-3">{rarity} Star Cards</h2>
+          <Row>
+            {filteredCards.map((card) => (
+              <Col key={card._id}>
+                <ProfCard profCard={card} />
+              </Col>
+            ))}
+          </Row>
+        </Col>
+      </Row>
+    );
+  };
+
   return (ready ? (
     <Container id="encyclopedia" fluid className="py-3">
       <h1 className="text-center">Trading Card Encyclopedia</h1>
@@ -41,30 +60,10 @@ const Encyclopedia = () => {
         </Col>
         <Col xs={2} />
       </Row>
-      <Row className="align-middle text-center py-4 px-5">
-        <Col>
-          <h2 className="py-3">1 Star Cards</h2>
-          <Row>
-            {cards.map((card) => (<Col key={card._id}><ProfCard profCard={card} /></Col>))}
-          </Row>
-        </Col>
-      </Row>
-      <Row className="align-middle text-center py-4 px-5">
-        <Col>
-          <h2 className="py-3">2 Star Cards</h2>
-          <p>
-            In progress!<br />
-            More coming soon!
-          </p>
-        </Col>
-      </Row>
-      <Row className="align-middle text-center py-4 px-5">
-        <Col>
-          <h2 className="py-3">3 Star Cards</h2>
-          <Image className="px-5" src="/images/johnson-card-mockup.png" height={400} />
-          <Image className="px-5" src="/images/moore-card-mockup.png" height={400} />
-        </Col>
-      </Row>
+      {renderCards(1)}
+      {renderCards(2)}
+      {renderCards(3)}
+      {renderCards(4)}
     </Container>
   ) : <LoadingSpinner />);
 };

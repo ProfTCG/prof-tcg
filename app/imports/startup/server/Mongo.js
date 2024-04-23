@@ -1,8 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-
 import { Cards } from '../../api/stuff/Cards';
-
-
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.

@@ -1,7 +1,28 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Button } from 'react-bootstrap';
+import ProfCard from '../components/ProfCard';
 
-// import { Cards } from '../../api/stuff/Cards';
+const sampleCards =
+    [
+      {
+        profName: 'Chad Morita',
+        rarity: 3,
+        border: '/images/card-frame.png',
+        profImage: '/images/morita-card.jpg',
+        backText: 'on da back: Chad Morita is a first year instructor yada yada',
+        isForSale: true,
+      },
+      {
+        profName: 'Edo',
+        rarity: 3,
+        border: '/images/card-frame.png',
+        profImage: '/images/edo-card.jpg',
+        backText: 'on da back: Chad Morita is a first year instructor yada yada',
+        isForSale: true,
+
+      },
+
+    ];
 
 const Marketplace = () => (
   <Container>
@@ -16,10 +37,10 @@ const Marketplace = () => (
         <h2>Card List</h2>
         <p>These cards are for sale!</p>
         <ul>
-          <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} />
-          {/* {Cards.collection.find().map((card) => <li key={card._id}>{card.profname}</li>)} */}
+          {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
+          {sampleCards.filter(prof => prof.isForSale).map((prof, index) => (<Row><Col key={index}><ProfCard profCard={prof} /></Col><Row><Button>Make Trade</Button></Row></Row>))}
         </ul>
-        <ul>Make Trade Request Button</ul>
+
       </Col>
     </Row>
 

@@ -14,6 +14,7 @@
       "password": "changeme"
     }
   ],
+
   "defaultCards": [
     {
       "profName": "Chad Morita",
@@ -35,5 +36,6 @@
       "owner": "john@foo.com",
       "isForSale": false
     }
+
   ]
 }

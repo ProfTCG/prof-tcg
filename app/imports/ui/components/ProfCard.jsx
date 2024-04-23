@@ -65,11 +65,12 @@ const ProfCard = ({ profCard }) => {
 // Require a document to be passed to this component.
 ProfCard.propTypes = {
   profCard: PropTypes.shape({
-    profName: PropTypes.string,
+    profName: PropTypes.String,
     rarity: PropTypes.number,
     border: PropTypes.string,
     profImage: PropTypes.string,
     backText: PropTypes.string,
+    isForSale: PropTypes.bool,
   }).isRequired,
 };
 

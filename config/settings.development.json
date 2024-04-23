@@ -18,7 +18,7 @@
     {
       "profName": "Chad Morita",
       "rarity": "3",
-      "border": "/images/card-frame.png",
+      "border": "/images/3star-border.png",
       "profImage": "/images/edo-card.jpg",
       "backImage": "/images/edo-card.jpg",
       "backText": "on da back: Chad Morita is a first year instructor yada yada",
@@ -28,7 +28,7 @@
     {
       "profName": "Lucas Horsman",
       "rarity": "4",
-      "border": "/images/card-frame.png",
+      "border": "/images/4star-border.png",
       "profImage": "/images/edo-card.jpg",
       "backImage": "/images/edo-card.jpg",
       "backText": "Lucas is not a professor",

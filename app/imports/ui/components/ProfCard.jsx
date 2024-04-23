@@ -23,7 +23,12 @@ const ProfCard = ({ profCard }) => {
         </Modal.Body>
       </Modal>
 
-      <div className="container">
+      <div style={{
+        position: 'relative',
+        width: '300px',
+        height: '400px',
+      }}
+      >
         <Image
           style={{
             backgroundImage: `url(${profCard.profImage})`,
@@ -43,9 +48,15 @@ const ProfCard = ({ profCard }) => {
             }
           }}
         />
-
-        <div className="top-left">{profCard.profName}</div>
-        <div className="bottom-left">{profCard.rarity}</div>
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          left: '30px',
+          color: 'white',
+        }}
+        >
+          <strong>{profCard.profName}</strong>
+        </div>
       </div>
     </>
   );

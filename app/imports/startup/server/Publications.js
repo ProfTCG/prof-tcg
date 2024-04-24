@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
-import { Cards } from '../../api/card/Cards';
+import { Cards } from '../../api/stuff/Cards';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
 // for some reason this breaks the app, the cards don't show up when this is the publish we use. the below userpublicationname works fine

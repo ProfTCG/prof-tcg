@@ -21,6 +21,35 @@ class NavBar {
     await testController.click('#login-dropdown-sign-in');
   }
 
+  async gotoYourCardsPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#your-cards-nav');
+  }
+
+  async gotoAddCardsPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#add-cards-admin-nav');
+  }
+
+  async gotoMarketplacePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#marketplace-nav');
+  }
+
+  async gotoEncyclopediaPage(testController) {
+
+    await testController.click('#encyclopedia-nav');
+  }
+
   /** Check that the specified user is currently logged in. */
   async isLoggedIn(testController, username) {
     const visible = await Selector('#basic-navbar-nav').visible;

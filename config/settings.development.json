@@ -24,10 +24,20 @@
       "profName": "Chad Morita",
       "rarity": "3",
       "border": "/images/3star-border.png",
-      "profImage": "/images/edo-card.jpg",
-      "backImage": "/images/edo-card.jpg",
+      "profImage": "/images/morita-card.jpg",
+      "backImage": "/images/morita-card.jpg",
       "backText": "on da back: Chad Morita is a first year instructor yada yada",
       "owner": "testJohn",
+      "isForSale": true
+    },
+    {
+      "profName": "Philip Johnson",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/edo-card.jpg",
+      "backImage": "/images/edo-card.jpg",
+      "backText": "rahhhhhh smth smth cool",
+      "owner": "testAdmin",
       "isForSale": true
     },
     {

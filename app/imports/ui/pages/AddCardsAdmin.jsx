@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, NumField, BoolField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, NumField, SubmitField, TextField, LongTextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 // import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -12,10 +12,8 @@ const formSchema = new SimpleSchema({
   profName: String,
   rarity: Number,
   profImage: String,
-  border: String,
   backImage: String,
   backText: String,
-  isForSale: Boolean,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -25,9 +23,12 @@ const AddCardsAdmin = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { profName, rarity, profImage, border, backImage, backText, isForSale } = data;
+    const { profName, rarity, profImage, backImage, backText } = data;
+    const border = `/images/${rarity}star-border.png`;
+    const isForSale = false;
+    const owner = 'testAdmin';
     Cards.collection.insert(
-      { profName, rarity, profImage, border, backImage, backText, isForSale },
+      { profName, rarity, profImage, border, backImage, backText, isForSale, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -41,8 +42,9 @@ const AddCardsAdmin = () => {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
+
   return (
-    <Container className="py-3">
+    <Container className="py-3" id="add-cards">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Add Card</h2></Col>
@@ -50,15 +52,10 @@ const AddCardsAdmin = () => {
             <Card>
               <Card.Body>
                 <TextField label="Professor Name" name="profName" />
-                {
-                  // may need to set max to 5
-                }
                 <NumField min="1" max="4" name="rarity" decimal={null} />
                 <TextField label="Professor Image" name="profImage" />
-                <TextField label="Border" name="border" />
                 <TextField label="Back Image" name="backImage" />
-                <TextField label="Back Text" name="backText" />
-                <BoolField label="Is for Sale?" name="isForSale" />
+                <LongTextField label="Back Text" name="backText" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

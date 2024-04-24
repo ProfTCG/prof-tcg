@@ -20,6 +20,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
 import YourCards from '../pages/YourCards';
+import TradeCard from '../pages/TradeCard';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/cards" element={<ProtectedRoute><YourCards /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
+          <Route path="/trade/:_id" element={<ProtectedRoute><TradeCard /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />

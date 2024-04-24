@@ -43,7 +43,7 @@ const Marketplace = () => {
               <Row>
                 <Col key={index} className="justify-content-center">
                   <ProfCard profCard={prof} />
-                  <Link to={`/trade/${prof._id}`} className="btn btn-sm btn-dark">Trade Request</Link>
+                  <Link to={`/trade/${prof._id}`} className="btn btn-sm btn-dark">Request Trade</Link>
                 </Col>
               </Row>
             ))}

@@ -12,6 +12,10 @@
     {
       "username": "testJohn",
       "password": "changeme"
+    },
+    {
+      "username": "testSam",
+      "password": "changeme"
     }
   ],
 
@@ -23,7 +27,7 @@
       "profImage": "/images/edo-card.jpg",
       "backImage": "/images/edo-card.jpg",
       "backText": "on da back: Chad Morita is a first year instructor yada yada",
-      "owner": "john@foo.com",
+      "owner": "testJohn",
       "isForSale": true
     },
     {
@@ -33,7 +37,7 @@
       "profImage": "/images/edo-card.jpg",
       "backImage": "/images/edo-card.jpg",
       "backText": "rahhhhhh smth smth cool",
-      "owner": "john@foo.com",
+      "owner": "testAdmin",
       "isForSale": true
     },
     {
@@ -43,7 +47,7 @@
       "profImage": "/images/edo-card.jpg",
       "backImage": "/images/edo-card.jpg",
       "backText": "Lucas is not a professor",
-      "owner": "john@foo.com",
+      "owner": "testJohn",
       "isForSale": false
     }
 

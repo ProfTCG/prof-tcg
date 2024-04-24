@@ -23,7 +23,7 @@
       "profImage": "/images/edo-card.jpg",
       "backImage": "/images/edo-card.jpg",
       "backText": "on da back: Chad Morita is a first year instructor yada yada",
-      "owner": "john@foo.com",
+      "owner": "testJohn",
       "isForSale": true
     },
     {
@@ -33,7 +33,7 @@
       "profImage": "/images/edo-card.jpg",
       "backImage": "/images/edo-card.jpg",
       "backText": "Lucas is not a professor",
-      "owner": "john@foo.com",
+      "owner": "testJohn",
       "isForSale": false
     }
 

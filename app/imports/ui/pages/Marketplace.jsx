@@ -26,7 +26,7 @@ const Marketplace = () => {
   }, []);
 
   return (ready ? (
-    <Container fluid className="py-3">
+    <Container fluid className="py-3" id="marketplace">
       <Row className="text-center">
         <Col>
           <h1>Marketplace</h1>

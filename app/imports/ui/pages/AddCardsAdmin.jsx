@@ -10,7 +10,11 @@ import { Cards } from '../../api/stuff/Cards.js';
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   profName: String,
-  rarity: Number,
+  rarity: {
+    type: Number,
+    // https://github.com/Meteor-Community-Packages/meteor-simple-schema#allowedvalues for information on acceptable input validation
+    allowedValues: [1, 2, 3, 4],
+  },
   profImage: String,
   backImage: String,
   backText: String,

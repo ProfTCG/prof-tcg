@@ -1,8 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Col, Container, Row, Button } from 'react-bootstrap';
-import { Cards } from '../../api/stuff/Cards';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Cards } from '../../api/card/Cards';
 import ProfCard from '../components/ProfCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -11,8 +12,8 @@ const Marketplace = () => {
   // Note that this subscription will get cleaned up
   // when your component is unmounted or deps change.
   // Get access to Stuff documents.
-  // Get access to cards.
-    const subscription = Meteor.subscribe(Cards.userPublicationName);
+  // Get access to all cards in Card collection.
+    const subscription = Meteor.subscribe('allCards');
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Stuff documents
@@ -25,25 +26,28 @@ const Marketplace = () => {
   }, []);
 
   return (ready ? (
-    <Container id="marketplace">
-      <Row>
+    <Container fluid className="py-3" id="marketplace">
+      <Row className="text-center">
         <Col>
           <h1>Marketplace</h1>
-          <p>Here you can see all cards available for trade from other users!
-            WIP!
-          </p>
-        </Col>
-        <Col>
-          <h2>Card List</h2>
-          <p>These cards are for sale!</p>
-          <ul>
-            {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
-            {cards.filter(prof => prof.isForSale).map((prof, index) => (<Row><Col key={index}><ProfCard profCard={prof} /></Col><Row><Button>Make Trade</Button></Row></Row>))}
-          </ul>
-
+          <p>Here you can see all cards available for trade from other users!</p>
         </Col>
       </Row>
+      <hr className="style-two" />
+      <Row>
+        <Col sm={2} className="text-center">
+          <h2>Card List</h2>
+          <p>These cards are for sale!</p>
+        </Col>
 
+        {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
+        {cards.filter(prof => prof.isForSale).map((prof, index) => (
+          <Col key={index} sm={3}>
+            <ProfCard profCard={prof} />
+            <Link to={`/trade/${prof._id}`} className="btn btn-dark">Request Trade</Link>
+          </Col>
+        ))}
+      </Row>
     </Container>
   ) : <LoadingSpinner />);
 };

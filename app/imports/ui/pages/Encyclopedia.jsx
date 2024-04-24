@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Cards } from '../../api/stuff/Cards';
+import { Cards } from '../../api/card/Cards';
 import ProfCard from '../components/ProfCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -12,8 +12,8 @@ const Encyclopedia = () => {
   const { ready, cards } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
-    // Get access to cards.
-    const subscription = Meteor.subscribe(Cards.userPublicationName);
+    // Get access to ALL cards.
+    const subscription = Meteor.subscribe('allCards');
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the cards

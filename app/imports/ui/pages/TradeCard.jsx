@@ -4,7 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { Cards } from '../../api/stuff/Cards';
+import { Cards } from '../../api/card/Cards';
 import ProfCard from '../components/ProfCard';
 
 const TradeCard = () => {

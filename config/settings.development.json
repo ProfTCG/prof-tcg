@@ -27,6 +27,16 @@
       "isForSale": true
     },
     {
+      "profName": "Philip Johnson",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/edo-card.jpg",
+      "backImage": "/images/edo-card.jpg",
+      "backText": "rahhhhhh smth smth cool",
+      "owner": "john@foo.com",
+      "isForSale": true
+    },
+    {
       "profName": "Lucas Horsman",
       "rarity": "4",
       "border": "/images/4star-border.png",

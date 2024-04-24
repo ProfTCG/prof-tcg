@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { Cards } from '../../api/stuff/Cards';
 import ProfCard from '../components/ProfCard';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -38,9 +39,15 @@ const Marketplace = () => {
           <p>These cards are for sale!</p>
           <ul>
             {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
-            {cards.filter(prof => prof.isForSale).map((prof, index) => (<Row><Col key={index}><ProfCard profCard={prof} /></Col><Row><Button>Make Trade</Button></Row></Row>))}
+            {cards.filter(prof => prof.isForSale).map((prof, index) => (
+              <Row>
+                <Col key={index} className="justify-content-center">
+                  <ProfCard profCard={prof} />
+                  <Link to={`/trade/${prof._id}`} className="btn btn-sm btn-dark">Trade Request</Link>
+                </Col>
+              </Row>
+            ))}
           </ul>
-
         </Col>
       </Row>
 

@@ -63,14 +63,6 @@ hr.style-two {
   display: block;
 }
 
-.carousel-control-next-icon {
-  filter: invert(100%);
-}
-
-.carousel-control-prev-icon {
-  filter: invert(100%);
-}
-
 /* Top left text */
 /* for prof names */
 .top-left {
@@ -89,3 +81,93 @@ hr.style-two {
 .container {
   position: relative;
 }
+
+.prof-card-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.prof-name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Lines from here are for: CardCloseups.jsx */
+.custom-modal .modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+.custom-modal .modal-body {
+  background-color: transparent;
+  border: none;
+}
+
+.custom-carousel3 {
+  position: absolute;
+  align-items: center;
+  display: flex;
+  margin: 7vh auto auto;
+  width: 100vw;
+}
+
+.custom-carousel3 .carousel-inner {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 100vw;
+  height: 600px;
+}
+
+.custom-carousel3 .carousel-control-next {
+  position: absolute;
+  margin-right: 15vw;
+  width: 80px;
+}
+
+.custom-carousel3 .carousel-control-prev {
+  position: absolute;
+  margin-left: 12vw;
+  width: 80px;
+}
+
+.center-cards3 {
+  display: grid;
+  margin: auto;
+  width: 290px;
+}
+
+.card-text {
+  color: whitesmoke;
+  opacity: 95%;
+  position: absolute;
+  left: 13vw;
+  top: 18vh;
+  font-family: Orbitron, serif;
+  width: 500px;
+  text-align: center;
+  font-weight: lighter;
+  transition: opacity 0.2s;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400 900;
+  src: url(https://fonts.gstatic.com/s/orbitron/v31/yMJRMIlzdpvBhQQL_Qq7dy0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.card-entries {
+  width: 200px;
+  margin: 50px 50px 50px 50px;
+  display: block;
+  justify-content: center;
+}
+
+/* End */

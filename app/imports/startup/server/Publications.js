@@ -1,31 +1,35 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
-import { Stuffs } from '../../api/stuff/Stuff';
-
+import { Cards } from '../../api/stuff/Cards';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
-Meteor.publish(Stuffs.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Stuffs.collection.find({ owner: username });
-  }
-  return this.ready();
-});
+// for some reason this breaks the app, the cards don't show up when this is the publish we use. the below userpublicationname works fine
+// Meteor.publish(Cards.userPublicationName, function () {
+//   if (this.userId) {
+//     const username = Meteor.users.findOne(this.userId).username;
+//     return Cards.collection.find({ owner: username });
+//   }
+//   return this.ready();
+// });
 
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
-Meteor.publish(Stuffs.adminPublicationName, function () {
+Meteor.publish(Cards.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Stuffs.collection.find();
+    return Cards.collection.find();
   }
   return this.ready();
 });
-
-// alanning:roles publication
+// Planning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
   if (this.userId) {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });
   }
   return this.ready();
+});
+// User-level publication.
+// If logged in, then publish all cards. Otherwise, publish nothing.
+Meteor.publish(Cards.userPublicationName, function () {
+  return Cards.collection.find();
 });

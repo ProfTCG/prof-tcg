@@ -20,7 +20,9 @@ import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
-import YourCards from '../pages/YourCards';
+// import YourCards from '../pages/YourCards';
+import YourCardsDemo from '../pages/YourCardsDemo';
+import TradeCard from '../pages/TradeCard';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -43,9 +45,10 @@ const App = () => {
           <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
-          <Route path="/cards" element={<ProtectedRoute><YourCards /></ProtectedRoute>} />
+          <Route path="/cards" element={<ProtectedRoute><YourCardsDemo /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
+          <Route path="/trade/:_id" element={<ProtectedRoute><TradeCard /></ProtectedRoute>} />
           <Route path="/addcards" element={<AdminProtectedRoute ready={ready}><AddCardsAdmin /></AdminProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />

@@ -39,7 +39,8 @@ test('Test that addcards page shows up', async (testController) => {
   await addcardsPage.isDisplayed(testController);
 });
 test('Test that marketplace page shows up', async (testController) => {
-
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoMarketplacePage(testController);
   await marketplacePage.isDisplayed(testController);
 });

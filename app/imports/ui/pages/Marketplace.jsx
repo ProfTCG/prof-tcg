@@ -16,9 +16,11 @@ const Marketplace = () => {
     const subscription = Meteor.subscribe('allCards');
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Stuff documents
+    // Get current user's username
+    const username = Meteor.user().username;
     // Get the cards
-    const cardsList = Cards.collection.find().fetch();
+    // Excludes current user's cards from the marketplace i.e. can't request to trade with your own cards
+    const cardsList = Cards.collection.find({ owner: { $ne: username } }).fetch();
     return {
       cards: cardsList,
       ready: rdy,
@@ -39,14 +41,14 @@ const Marketplace = () => {
           <h2>Card List</h2>
           <p>These cards are for sale!</p>
         </Col>
-
-        {/* <img src="/images/johnson-card-mockup.png" alt="Philip Johnson" width={200} /> */}
-        {cards.filter(prof => prof.isForSale).map((prof, index) => (
-          <Col key={index} sm={3}>
-            <ProfCard profCard={prof} />
-            <Link to={`/trade/${prof._id}`} className="btn btn-dark">Request Trade</Link>
-          </Col>
-        ))}
+        {
+          cards.filter(prof => prof.isForSale).map((prof, index) => (
+            <Col key={index} sm={3}>
+              <ProfCard profCard={prof} />
+              <Link to={`/trade/${prof._id}`} className="btn btn-dark">Request Trade</Link>
+            </Col>
+          ))
+        }
       </Row>
     </Container>
   ) : <LoadingSpinner />);

@@ -45,16 +45,17 @@ const TradeCard = () => {
   };
   const handleTrade = () => {
     if (current && selectedCard) {
-      // Swap owners
       Meteor.call(tradeCardsMethod, current._id, selectedCard._id, (error) => {
         if (error) {
           swal('Error', 'Error trading cards', 'error');
         } else {
           swal('Success', 'Cards traded successfully', 'success');
         }
+        // console.log(result); // You can use the result parameter as needed
       });
     }
   };
+
   return ready ? (
     <Container fluid className="py-3">
       <Row className="justify-content-center">

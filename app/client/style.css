@@ -97,7 +97,8 @@ hr.style-two {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Lines from here are for: CardCloseups.jsx */
+/* Lines from here are for: CardCloseups.jsx  */      
+/* reused some in profcard in the conversion proccess */
 .custom-modal .modal-content {
   background-color: transparent;
   border: none;

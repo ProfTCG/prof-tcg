@@ -36,7 +36,7 @@ const TradeCard = () => {
   }, [_id]);
   // Set default selected card to the first card in the list upon loading
   useEffect(() => {
-    if (myCards.length > 0 && !selectedCard) {
+    if (myCards && myCards.length > 0 && !selectedCard) {
       setSelectedCard(myCards[0]);
     }
   }, [myCards, selectedCard]);

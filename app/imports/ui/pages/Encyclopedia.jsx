@@ -33,7 +33,9 @@ const Encyclopedia = () => {
           <Row>
             {filteredCards.map((card) => (
               <Col key={card._id}>
-                <ProfCard profCard={card} />
+                <div style={{ width: '300px', height: '400px' }}>
+                  <ProfCard profCard={card} />
+                </div>
               </Col>
             ))}
           </Row>

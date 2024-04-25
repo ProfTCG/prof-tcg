@@ -9,8 +9,6 @@ const tradeCardsMethod = 'Cards.trade';
 
 Meteor.methods({
   'Cards.trade'(cardId1, cardId2) {
-    console.log('method invoked');
-
     // Validate method arguments
     check(cardId1, String);
     check(cardId2, String);

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/Modal';
+import ReactParallaxTilt from 'react-parallax-tilt';
+
 import { Image } from 'react-bootstrap';
 
 /** Renders a single professor trading card in the Encyclopedia. See pages/Encyclopedia.jsx. */
@@ -11,53 +13,75 @@ const ProfCard = ({ profCard }) => {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            {profCard.profName}
-          </Modal.Title>
-        </Modal.Header>
+      <Modal show={show} onHide={handleClose} className="custom-modal" dialogClassName="modal-90w">
         <Modal.Body>
-          <p><strong>Rarity:</strong> {profCard.rarity} Stars</p>
-          {profCard.backText}
+          <div style={{ justifyContent: 'space-around', display: 'flex' }}>
+            <div style={{ height: '410px', width: '290px', marginRight: '100%' }}>
+              <ReactParallaxTilt
+                glareEnable
+                glarePosition="all"
+                glareMaxOpacity="0.15"
+              >
+                <Image
+                  style={{
+                    backgroundImage: `url(${profCard.profImage})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '264px 350px',
+                    backgroundPosition: 'center',
+                    width: '300px',
+                    height: '400px',
+                    cursor: 'pointer',
+                  }}
+                  src={profCard.border}
+                />
+              </ReactParallaxTilt>
+            </div>
+            <div className="card-text">
+              <h1>{profCard.profName}</h1>
+              <h3>Rarity: {profCard.rarity} Stars</h3>
+              <p>{profCard.backText}</p>
+            </div>
+          </div>
         </Modal.Body>
       </Modal>
 
-      <div style={{
-        position: 'relative',
-        width: '300px',
-        height: '400px',
-      }}
-      >
-        <Image
-          style={{
-            backgroundImage: `url(${profCard.profImage})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '264px 350px',
-            backgroundPosition: 'center',
-            width: '300px',
-            height: '400px',
-            cursor: 'pointer',
-          }}
-          src={profCard.border}
-          alt="professor card"
-          onClick={handleShow}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter' || event.key === 'Space') {
-              handleShow();
-            }
-          }}
-        />
+      <ReactParallaxTilt>
         <div style={{
-          position: 'absolute',
-          top: '20px',
-          left: '30px',
-          color: 'white',
+          position: 'relative',
+          width: '300px',
+          height: '400px',
         }}
         >
-          <strong>{profCard.profName}</strong>
+          <Image
+            style={{
+              backgroundImage: `url(${profCard.profImage})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '264px 350px',
+              backgroundPosition: 'center',
+              width: '300px',
+              height: '400px',
+              cursor: 'pointer',
+            }}
+            src={profCard.border}
+            alt="professor card"
+            onClick={handleShow}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === 'Space') {
+                handleShow();
+              }
+            }}
+          />
+          <div style={{
+            position: 'absolute',
+            top: '20px',
+            left: '30px',
+            color: 'white',
+          }}
+          >
+            <strong>{profCard.profName}</strong>
+          </div>
         </div>
-      </div>
+      </ReactParallaxTilt>
     </>
   );
 };

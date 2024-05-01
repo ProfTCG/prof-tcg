@@ -97,7 +97,7 @@ hr.style-two {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Lines from here are for: CardCloseups.jsx  */      
+/* Lines from here are for: CardCloseups.jsx  */
 /* reused some in profcard in the conversion proccess */
 .custom-modal .modal-content {
   background-color: transparent;
@@ -169,6 +169,159 @@ hr.style-two {
   margin: 50px 50px 50px 50px;
   display: block;
   justify-content: center;
+}
+
+/* End */
+/* Lines 175 ~ 325 are for Components: CardCloseups and Card-Packs */
+
+.container3 {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.center-header3 {
+  font-family: "Roboto Light", serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 23px;
+}
+
+.pack-previews {
+  width: 135px;
+  margin: 0 30px 0 30px;
+}
+
+.center-header5 {
+  font-style: italic;
+  color: black;
+  text-decoration-color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+  font-size: 40px;
+  font-family: Orbitron, serif;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.center-cards6 {
+  width: 300px;
+  height: 330px;
+  margin: auto;
+  display: block;
+}
+
+.center-header4 {
+  font-style: italic;
+  font-size: 37px;
+  font-family: Orbitron, serif;
+  font-weight: 400;
+  margin-top: 283px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.custom-button3 {
+  width: 430px;
+  height: 50px;
+  background-color: white!important;
+  border-color: black!important;
+  border-radius: 2px!important;
+  border-width: medium!important;
+  margin-left: 2.2vw;
+  margin-right: 1vw;
+  pointer-events: none;
+}
+
+.custom-button-text2 {
+  font-size: 25px;
+  font-family: Orbitron, serif;
+  margin-top: 3px;
+  margin-right: 1px;
+  color: black
+}
+
+.custom-modal2 {
+  margin-top: -5vh;
+}
+
+.custom-modal2 .modal-lg {
+  max-width: 1050px;
+}
+
+.custom-modal2 .modal-body {
+  height: 350px;
+}
+
+.custom-button {
+  width: 150px;
+  height: 50px;
+  background-color: white!important;
+  border-color: black!important;
+  border-radius: 2px!important;
+  border-width: medium!important;
+  margin-left: 2.2vw;
+  margin-right: 1vw;
+}
+
+.custom-button:active {
+  filter: invert(100%);
+}
+
+.custom-button-text {
+  font-size: 25px;
+  font-family: Orbitron, serif;
+  margin-top: 3px;
+  margin-right: 1px;
+  color: black
+}
+
+.custom-button2 {
+  width: 280px;
+  height: 50px;
+  background-color: white!important;
+  border-color: black!important;
+  border-radius: 2px!important;
+  border-width: medium!important;
+  margin-left: 2.2vw;
+  margin-right: 1vw;
+}
+
+.custom-button2:active {
+  filter: invert(100%);
+}
+
+.custom-button5 {
+  width: 280px;
+  height: 50px;
+  background-color: white!important;
+  border-color: black!important;
+  border-radius: 2px!important;
+  border-width: medium!important;
+  margin-left: 2.2vw;
+  margin-right: 1vw;
+  margin-bottom: 1vh;
+}
+
+.custom-button5:active {
+  filter: invert(100%);
+}
+
+.custom-carousel4 {
+  width: 35vw;
+  margin-bottom: 10vh;
+}
+
+.custom-carousel4 .carousel-control-next {
+  filter: invert(100%);
+}
+
+.custom-carousel4 .carousel-control-prev {
+  filter: invert(100%);
 }
 
 /* End */

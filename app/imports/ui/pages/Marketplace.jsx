@@ -16,11 +16,10 @@ const Marketplace = () => {
     const subscription = Meteor.subscribe('allCards');
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get current user's username
-    const username = Meteor.user().username;
-    // Get the cards
-    // Excludes current user's cards from the marketplace i.e. can't request to trade with your own cards
-    const cardsList = Cards.collection.find({ owner: { $ne: username } }).fetch();
+    // retrieve username, error catching: if no user is logged in return null
+    const username = Meteor.user() ? Meteor.user().username : null;
+    // retrieve all cards excluding user's (cannot trade with your own cards)
+    const cardsList = username ? Cards.collection.find({ owner: { $ne: username } }).fetch() : [];
     return {
       cards: cardsList,
       ready: rdy,
@@ -41,10 +40,12 @@ const Marketplace = () => {
           <h2>Card List</h2>
           <p>These cards are for sale!</p>
         </Col>
+
         {
           cards.filter(prof => prof.isForSale).map((prof, index) => (
-            <Col key={index} sm={3}>
+            <Col key={index} sm={3} className="text-center">
               <ProfCard profCard={prof} />
+              <small className="d-block">owner: {prof.owner}</small>
               <Link to={`/trade/${prof._id}`} className="btn btn-dark">Request Trade</Link>
             </Col>
           ))

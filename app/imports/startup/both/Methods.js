@@ -33,6 +33,9 @@ Meteor.methods({
     // Update the owners of the cards
     Cards.collection.update(card1._id, { $set: { owner: owner2 } });
     Cards.collection.update(card2._id, { $set: { owner: owner1 } });
+    // Resets isForSale
+    // Cards.collection.update(card1._id, { $set: { isForSale: false } });
+    // Cards.collection.update(card2._id, { $set: { isForSale: false } });
 
     return 'Trade successful.';
   },

@@ -49,7 +49,10 @@ const TradeCard = () => {
         if (error) {
           swal('Error', 'Error trading cards', 'error');
         } else {
-          swal('Success', 'Cards traded successfully', 'success');
+          swal('Success', 'Cards traded successfully', 'success').then(() => {
+            // Redirect to marketplace
+            window.location.href = '/marketplace';
+          });
         }
         // console.log(result); // You can use the result parameter as needed
       });
@@ -62,34 +65,30 @@ const TradeCard = () => {
         <Col md={7}>
           <Col className="text-center">
             <h2>Trade Cards</h2>
+            <h4>Trade {current.profName} for {selectedCard.profName}?</h4>
           </Col>
         </Col>
       </Row>
-      <Row className="justify-content-center">
-        <Col sm={2}>
-          <Col className="text-center">
-            <ProfCard profCard={current} />
-            <small>owner: {current.owner}</small>
-          </Col>
+      {/* Row rendering cards */}
+      <Row>
+        <Col className="text-center d-flex justify-content-end">
+          <ProfCard profCard={current} />
         </Col>
-        <Col sm={2} />
-        {selectedCard ? ( // Conditional rendering based on whether a card is selected or not
-          <Col sm={2}>
+        <Col className="d-flex justify-content-start">
+          {selectedCard ? ( // Conditional rendering based on whether a card is selected or not
             <ProfCard profCard={selectedCard} />
-            <small>owner: {selectedCard.owner}</small>
-          </Col>
-        ) : (
-          // load first card in the list otherwise
-          <Col sm={2}>
+          ) : (
             <ProfCard profCard={myCards[0]} />
-            <small>owner: {myCards[0].owner}</small>
-          </Col>
-        )}
+          )}
+        </Col>
       </Row>
-      <Row className="justify-content-center text-center py-1">
-        <Col />
-        <Col>
-          <Dropdown>
+      {/* Row rendering select buttons */}
+      <Row>
+        <Col className="justify-content-end">
+          <Link to="/marketplace" className="btn btn-dark"><ArrowLeft size={24} /> Trade something else</Link>
+        </Col>
+        <Col className="justify-content-start">
+          <Dropdown className="trade-dropdown ms-5">
             <Dropdown.Toggle variant="dark" id="dropdown-basic">
               {selectedCard ? selectedCard.profName : 'Select Card'}
             </Dropdown.Toggle>
@@ -102,12 +101,11 @@ const TradeCard = () => {
             </Dropdown.Menu>
           </Dropdown>
         </Col>
-        <Col />
       </Row>
+      {/* Row rendering trade button */}
       <Row className="justify-content-center text-center pt-3">
-        <Col className="mx-auto">
-          <Link to="/marketplace" className="btn btn-dark"><ArrowLeft /></Link>
-          <Button variant="dark" className="ms-2" onClick={handleTrade}>Trade</Button>
+        <Col>
+          <Button variant="dark" className="px-5 ms-1" onClick={handleTrade}>Let&apos;s Trade!</Button>
         </Col>
       </Row>
     </Container>

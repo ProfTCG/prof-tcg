@@ -47,7 +47,7 @@ const TradeCard = () => {
     if (current && selectedCard) {
       Meteor.call(tradeCardsMethod, current._id, selectedCard._id, (error) => {
         if (error) {
-          swal('Error', 'Error trading cards', 'error');
+          swal('Error', error.reason, 'error');
         } else {
           swal('Success', 'Cards traded successfully', 'success').then(() => {
             // Redirect to marketplace

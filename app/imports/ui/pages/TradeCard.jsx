@@ -3,7 +3,6 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Button, Col, Container, Dropdown, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'react-bootstrap-icons';
 import swal from 'sweetalert';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -70,42 +69,40 @@ const TradeCard = () => {
         </Col>
       </Row>
       {/* Row rendering cards */}
-      <Row>
-        <Col className="text-center d-flex justify-content-end">
-          <ProfCard profCard={current} />
+      <Row className="justify-content-center">
+        <Col sm="auto" md={3}>
+          <Container className="d-inline-block text-center">
+            <ProfCard profCard={current} />
+            <Button href="/marketplace" variant="dark"><ArrowLeft size={20} /> Trade something else</Button>
+          </Container>
         </Col>
-        <Col className="d-flex justify-content-start">
-          {selectedCard ? ( // Conditional rendering based on whether a card is selected or not
-            <ProfCard profCard={selectedCard} />
-          ) : (
-            <ProfCard profCard={myCards[0]} />
-          )}
-        </Col>
-      </Row>
-      {/* Row rendering select buttons */}
-      <Row>
-        <Col className="justify-content-end">
-          <Link to="/marketplace" className="btn btn-dark"><ArrowLeft size={24} /> Trade something else</Link>
-        </Col>
-        <Col className="justify-content-start">
-          <Dropdown className="trade-dropdown ms-5">
-            <Dropdown.Toggle variant="dark" id="dropdown-basic">
-              {selectedCard ? selectedCard.profName : 'Select Card'}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              {myCards.map((card) => (
-                <Dropdown.Item key={card._id} onClick={() => handleCardSelect(card)}>
-                  {card.profName}
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
+        <Col sm="auto" md={3}>
+          <Container className="d-inline-block text-center">
+            {selectedCard ? ( // Conditional rendering based on whether a card is selected or not
+              <ProfCard profCard={selectedCard} />
+            ) : (
+              <ProfCard profCard={myCards[0]} />
+            )}
+            <Dropdown className="trade-dropdown">
+              <Dropdown.Toggle variant="dark" id="dropdown-basic">
+                {selectedCard ? selectedCard.profName : 'Select Card'}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                {myCards.map((card) => (
+                  <Dropdown.Item key={card._id} onClick={() => handleCardSelect(card)}>
+                    {card.profName}
+                  </Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Container>
         </Col>
       </Row>
+
       {/* Row rendering trade button */}
       <Row className="justify-content-center text-center pt-3">
-        <Col>
-          <Button variant="dark" className="px-5 ms-1" onClick={handleTrade}>Let&apos;s Trade!</Button>
+        <Col md={7}>
+          <Button variant="outline-dark" onClick={handleTrade} className="fw-bold border-3">Let&apos;s Trade!</Button>
         </Col>
       </Row>
     </Container>

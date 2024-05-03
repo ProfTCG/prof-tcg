@@ -50,6 +50,7 @@ const ProfCard = ({ profCard }) => {
           position: 'relative',
           width: '300px',
           height: '400px',
+          margin: 'auto',
         }}
         >
           <Image

@@ -45,7 +45,7 @@ const Encyclopedia = () => {
   };
 
   return (ready ? (
-    <Container id="encyclopedia" fluid className="py-3">
+    <Container id="encyclopedia" fluid className="py-3" style={{cursor: 'url(cursor.cur), auto'}}>
       <h1 className="text-center">Trading Card Encyclopedia</h1>
       <Row className="py-4">
         <Col xs={2} />

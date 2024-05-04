@@ -3,7 +3,6 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Button, Col, Container, Dropdown, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'react-bootstrap-icons';
 import swal from 'sweetalert';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -47,9 +46,12 @@ const TradeCard = () => {
     if (current && selectedCard) {
       Meteor.call(tradeCardsMethod, current._id, selectedCard._id, (error) => {
         if (error) {
-          swal('Error', 'Error trading cards', 'error');
+          swal('Error', error.reason, 'error');
         } else {
-          swal('Success', 'Cards traded successfully', 'success');
+          swal('Success', 'Cards traded successfully', 'success').then(() => {
+            // Redirect to marketplace
+            window.location.href = '/marketplace';
+          });
         }
         // console.log(result); // You can use the result parameter as needed
       });
@@ -62,52 +64,45 @@ const TradeCard = () => {
         <Col md={7}>
           <Col className="text-center">
             <h2>Trade Cards</h2>
+            <h4>Trade {current.profName} for {selectedCard.profName}?</h4>
           </Col>
         </Col>
       </Row>
+      {/* Row rendering cards */}
       <Row className="justify-content-center">
-        <Col sm={2}>
-          <Col className="text-center">
+        <Col sm="auto" md={3}>
+          <Container className="d-inline-block text-center">
             <ProfCard profCard={current} />
-            <small>owner: {current.owner}</small>
-          </Col>
+            <Button href="/marketplace" variant="dark"><ArrowLeft size={20} /> Trade something else</Button>
+          </Container>
         </Col>
-        <Col sm={2} />
-        {selectedCard ? ( // Conditional rendering based on whether a card is selected or not
-          <Col sm={2}>
-            <ProfCard profCard={selectedCard} />
-            <small>owner: {selectedCard.owner}</small>
-          </Col>
-        ) : (
-          // load first card in the list otherwise
-          <Col sm={2}>
-            <ProfCard profCard={myCards[0]} />
-            <small>owner: {myCards[0].owner}</small>
-          </Col>
-        )}
-      </Row>
-      <Row className="justify-content-center text-center py-1">
-        <Col />
-        <Col>
-          <Dropdown>
-            <Dropdown.Toggle variant="dark" id="dropdown-basic">
-              {selectedCard ? selectedCard.profName : 'Select Card'}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              {myCards.map((card) => (
-                <Dropdown.Item key={card._id} onClick={() => handleCardSelect(card)}>
-                  {card.profName}
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
+        <Col sm="auto" md={3}>
+          <Container className="d-inline-block text-center">
+            {selectedCard ? ( // Conditional rendering based on whether a card is selected or not
+              <ProfCard profCard={selectedCard} />
+            ) : (
+              <ProfCard profCard={myCards[0]} />
+            )}
+            <Dropdown className="trade-dropdown">
+              <Dropdown.Toggle variant="dark" id="dropdown-basic">
+                {selectedCard ? selectedCard.profName : 'Select Card'}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                {myCards.map((card) => (
+                  <Dropdown.Item key={card._id} onClick={() => handleCardSelect(card)}>
+                    {card.profName}
+                  </Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Container>
         </Col>
-        <Col />
       </Row>
+
+      {/* Row rendering trade button */}
       <Row className="justify-content-center text-center pt-3">
-        <Col className="mx-auto">
-          <Link to="/marketplace" className="btn btn-dark"><ArrowLeft /></Link>
-          <Button variant="dark" className="ms-2" onClick={handleTrade}>Trade</Button>
+        <Col md={7}>
+          <Button variant="outline-dark" onClick={handleTrade} className="fw-bold border-3">Let&apos;s Trade!</Button>
         </Col>
       </Row>
     </Container>

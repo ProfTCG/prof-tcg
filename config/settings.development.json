@@ -30,8 +30,8 @@
       "profName": "Philip Johnson",
       "rarity": "3",
       "border": "/images/3star-border.png",
-      "profImage": "/images/edo-card.jpg",
-      "backImage": "/images/edo-card.jpg",
+      "profImage": "/images/johnson-card.jpg",
+      "backImage": "/images/johnson-card.jpg",
       "backText": "teaches ICS 314",
       "owner": "testAdmin",
       "isForSale": true

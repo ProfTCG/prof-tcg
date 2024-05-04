@@ -1,28 +1,28 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import Button from 'react-bootstrap/Button';
-import CardPool from '../../../../client/CardPool';
 import { Meteor } from 'meteor/meteor';
+import CardPool from '../../../../client/CardPool';
 import { YourCards } from '../../../api/YourCards';
 
 const { items } = CardPool.cards;
 let cardPool = null;
 
 const AddYourCard = (newCard) => {
-    const owner = Meteor.user().username;
-    for (let cards = 0; cards < newCard.length; cards++) {
-      let currentCard = newCard[cards];
-      YourCards.collection.insert({
-        name: currentCard.name,
-        image: currentCard.image,
-        rarity: currentCard.rarity,
-        desc: currentCard.desc,
-        copies: 1,
-        owner: owner,
-        trade: false
-      });
-    }
-}
+  const owner = Meteor.user().username;
+  for (let cards = 0; cards < newCard.length; cards++) {
+    const currentCard = newCard[cards];
+    YourCards.collection.insert({
+      name: currentCard.name,
+      image: currentCard.image,
+      rarity: currentCard.rarity,
+      desc: currentCard.desc,
+      copies: 1,
+      owner: owner,
+      trade: false,
+    });
+  }
+};
 
 const generateCard = (rarity) => {
   cardPool = items.filter(cards => cards.rarity === rarity);
@@ -32,53 +32,53 @@ const generateCard = (rarity) => {
 const StandardPack = () => {
   const random = (Math.floor(Math.random() * 100) + 1);
   switch (true) {
-    case (random >= 1 && random <= 39):
-      return generateCard(1);
-    case (random >= 40 && random <= 74):
-      return generateCard(2);
-    case (random >= 75 && random <= 94):
-      return generateCard(3);
-    case (random >= 95 && random <= 99):
-      return generateCard(4);
-    case (random === 100):
-      return generateCard(5);
-    default:
-      return null;
+  case (random >= 1 && random <= 39):
+    return generateCard(1);
+  case (random >= 40 && random <= 74):
+    return generateCard(2);
+  case (random >= 75 && random <= 94):
+    return generateCard(3);
+  case (random >= 95 && random <= 99):
+    return generateCard(4);
+  case (random === 100):
+    return generateCard(5);
+  default:
+    return null;
   }
 };
 
 const AdvancedPack = () => {
   const random = (Math.floor(Math.random() * 100) + 1);
   switch (true) {
-    case (random >= 1 && random <= 39):
-      return generateCard(2);
-    case (random >= 40 && random <= 74):
-      return generateCard(3);
-    case (random >= 75 && random <= 94):
-      return generateCard(4);
-    case (random >= 95 && random <= 100):
-      return generateCard(5);
-    default:
-      return null;
+  case (random >= 1 && random <= 39):
+    return generateCard(2);
+  case (random >= 40 && random <= 74):
+    return generateCard(3);
+  case (random >= 75 && random <= 94):
+    return generateCard(4);
+  case (random >= 95 && random <= 100):
+    return generateCard(5);
+  default:
+    return null;
   }
 };
 
 const UltimatePack = () => {
   const random = (Math.floor(Math.random() * 100) + 1);
   switch (true) {
-    case (random >= 1 && random <= 50):
-      return generateCard(3);
-    case (random >= 51 && random <= 90):
-      return generateCard(4);
-    case (random >= 91 && random <= 100):
-      return generateCard(5);
-    default:
-      return null;
+  case (random >= 1 && random <= 50):
+    return generateCard(3);
+  case (random >= 51 && random <= 90):
+    return generateCard(4);
+  case (random >= 91 && random <= 100):
+    return generateCard(5);
+  default:
+    return null;
   }
 };
 
 const isCardDuplicate = (newCard, packItems) => {
-  for (let card of packItems) {
+  for (const card of packItems) {
     if (card !== undefined) {
       if (card.name === newCard.name && card.rarity === newCard.rarity) {
         return true;
@@ -91,35 +91,35 @@ const isCardDuplicate = (newCard, packItems) => {
 const generatePack = (packType) => {
   const packItems = Array(4);
   switch (packType) {
-    case 0:
-      for (let index = 0; index < 4; index++) {
-        let newCard = StandardPack();
-        while (isCardDuplicate(newCard, packItems)) {
-          newCard = StandardPack();
-        }
-        packItems[index] = newCard;
+  case 0:
+    for (let index = 0; index < 4; index++) {
+      let newCard = StandardPack();
+      while (isCardDuplicate(newCard, packItems)) {
+        newCard = StandardPack();
       }
-      return packItems;
-    case 1:
-      for (let index = 0; index < 4; index++) {
-        let newCard = AdvancedPack();
-        while (isCardDuplicate(newCard, packItems)) {
-          newCard = AdvancedPack();
-        }
-        packItems[index] = newCard;
+      packItems[index] = newCard;
+    }
+    return packItems;
+  case 1:
+    for (let index = 0; index < 4; index++) {
+      let newCard = AdvancedPack();
+      while (isCardDuplicate(newCard, packItems)) {
+        newCard = AdvancedPack();
       }
-      return packItems;
-    case 2:
-      for (let index = 0; index < 4; index++) {
-        let newCard = UltimatePack();
-        while (isCardDuplicate(newCard, packItems)) {
-          newCard = UltimatePack();
-        }
-        packItems[index] = newCard;
+      packItems[index] = newCard;
+    }
+    return packItems;
+  case 2:
+    for (let index = 0; index < 4; index++) {
+      let newCard = UltimatePack();
+      while (isCardDuplicate(newCard, packItems)) {
+        newCard = UltimatePack();
       }
-      return packItems;
-    default:
-      return null;
+      packItems[index] = newCard;
+    }
+    return packItems;
+  default:
+    return null;
   }
 };
 // eslint-disable-next-line react/prop-types

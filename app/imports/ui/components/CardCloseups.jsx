@@ -1,91 +1,82 @@
 import React, { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Carousel from 'react-bootstrap/Carousel';
-import ReactParallaxTilt from 'react-parallax-tilt';
+import { Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import { YourCards } from '../../api/YourCards';
+import { Cards } from '../../api/card/Cards';
 import LoadingSpinner from './LoadingSpinner';
+import ProfCard from './ProfCard';
 
 const CardCloseups = () => {
-
-  let { ready, yourCards } = useTracker(() => {
-    const subscription = Meteor.subscribe(YourCards.userPublicationName);
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { ready, cards } = useTracker(() => {
+    // Note that this subscription will get cleaned up
+    // when your component is unmounted or deps change.
+    // Get access to ALL cards.
+    const subscription = Meteor.subscribe(Cards.userPublicationName);
+    // Determine if the subscription is ready
     const rdy = subscription.ready();
-    const yourCardItems = YourCards.collection.find({}, { sort: { rarity: 1, name: 1 } }).fetch();
+    // Get the cards
+    const cardsList = Cards.collection.find().fetch();
     return {
-      yourCards: yourCardItems,
+      cards: cardsList,
       ready: rdy,
     };
   }, []);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const addToMarketplace = (card) => {
+    Meteor.call('cards.setForSale', card._id, card.isForSale, (error) => {
+      if (error) {
+        console.error('Error toggling card for sale', error);
+      } else {
+        setAlertMessage(card.isForSale ? `Card ${card.profName} removed from marketplace` : `Card ${card.profName} added to marketplace`);
+        setShowAlert(true);
+      }
+    });
+  };
+  const renderCards = (rarity) => {
+    const filteredCards = cards.filter(function (card) { return card.rarity === rarity; });
+    return (
+      <Row className="align-middle text-center py-4 px-5">
+        <Col>
+          <h2 className="py-3">{rarity} Star Cards</h2>
+          <Row>
+            {filteredCards.map((card) => (
+              <Col key={card._id}>
+                <div style={{ width: '300px', height: '400px' }}>
+                  <ProfCard profCard={card} />
+                  <Button variant="primary" onClick={() => addToMarketplace(card)}>Add to Marketplace</Button>
 
-  const [show, setShow] = useState(false);
-  const [cardIndex, setCardIndex] = useState(0);
-  const [cardName, setCardName] = useState('');
-  const [cardDesc, setCardDesc] = useState('');
-  const [cardCopies, setCardCopies] = useState(1);
-  const [fade, setFade] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = (card, index, name, desc, copies) => {
-    setCardName(name);
-    setCardDesc(desc);
-    setCardIndex(index);
-    setCardCopies(copies);
-    setShow(true);
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Col>
+      </Row>
+    );
   };
 
-  const handleSelect = (selectedIndex) => {
-    setCardIndex(selectedIndex);
-    setFade(true);
-    setTimeout(() => {
-      setCardName(yourCards[selectedIndex].name);
-      setCardDesc(yourCards[selectedIndex].desc);
-      setCardCopies(yourCards[selectedIndex].copies);
-      setFade(false);
-    }, 580);
-  };
   return (ready ? (
-    <>
-      <div>
-        <div style={{ height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start', marginTop: '20px', marginLeft: '48px', marginRight: '40px' }}>
-          {yourCards.map((yourCard, index) => (
-            // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-            <div key={index} onClick={() => handleShow(yourCard, index, yourCard.name, yourCard.desc, yourCard.copies)}>
-              <ReactParallaxTilt>
-                <img className="card-entries" src={yourCard.image} alt="lol" />
-              </ReactParallaxTilt>
-            </div>
-          ))}
-        </div>
-      </div>
-      <Modal show={show} onHide={handleClose} className="custom-modal">
-        <Modal.Body>
-          <div style={{ justifyContent: 'center', display: 'flex' }}>
-            <Carousel className="custom-carousel3" indicators={false} activeIndex={cardIndex} onSelect={handleSelect} interval={null}>
-              {yourCards.map((card, index) => (
-                <Carousel.Item key={index}>
-                  <div style={{ height: '410px', width: '290px', margin: '10vh auto auto 25vw' }}>
-                    <ReactParallaxTilt
-                      glareEnable
-                      glareMaxOpacity="0.15"
-                    >
-                      <img className="center-cards3" src={card.image} alt="lol" />
-                    </ReactParallaxTilt>
-                  </div>
-                </Carousel.Item>
-              ))}
-            </Carousel>
-            <div className={`card-text ${fade ? 'fade' : ''}`}>
-              <h1>{cardName}</h1>
-              <h3>{cardDesc}</h3>
-              <h3 style={{ marginTop: '380px', marginLeft: '-57vw'}}>You have: {cardCopies}</h3>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
-    </>
-  ): <LoadingSpinner />);
+    <Container id="encyclopedia" fluid className="py-3" style={{ cursor: 'url(cursor.cur), auto' }}>
+      <h1 className="text-center">Your Cards</h1>
+      <Row className="py-4">
+        <Col xs={2} />
+        <Col>
+          <p> Here you can find all the cards you own, and add them to the marketplace</p>
+        </Col>
+        <Col xs={2} />
+      </Row>
+      {showAlert && (
+        <Alert variant="info" onClose={() => setShowAlert(false)} dismissible>
+          {alertMessage}
+        </Alert>
+      )}
+      {renderCards(1)}
+      {renderCards(2)}
+      {renderCards(3)}
+      {renderCards(4)}
+    </Container>
+  ) : <LoadingSpinner />);
 };
 
 export default CardCloseups;

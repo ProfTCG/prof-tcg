@@ -5,7 +5,7 @@ import ReactParallaxTilt from 'react-parallax-tilt';
 
 import { Image } from 'react-bootstrap';
 
-/** Renders a single professor trading card in the Encyclopedia. See pages/Encyclopedia.jsx. */
+/** Renders a single professor trading card. See pages/Encyclopedia.jsx. */
 const ProfCard = ({ profCard }) => {
   // TODO: Determine display format, determine card schema(s). See stuff/Cards.js
   const [show, setShow] = useState(false);
@@ -38,7 +38,7 @@ const ProfCard = ({ profCard }) => {
             </div>
             <div className="card-text">
               <h1>{profCard.profName}</h1>
-              <h3>Rarity: {profCard.rarity} Stars</h3>
+              {/* <h3>Rarity: {profCard.rarity} Stars</h3> */}
               <p>{profCard.backText}</p>
             </div>
           </div>

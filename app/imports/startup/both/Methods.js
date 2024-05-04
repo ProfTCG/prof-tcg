@@ -8,6 +8,16 @@ import { Cards } from '../../api/card/Cards';
 const tradeCardsMethod = 'Cards.trade';
 
 Meteor.methods({
+  // server side code
+
+  'cards.setForSale'(cardId, isForSale) {
+    check(cardId, String);
+    check(isForSale, Boolean);
+    Cards.collection.update(cardId, {
+      $set: { isForSale: !isForSale },
+    });
+  },
+
   'Cards.trade'(cardId1, cardId2) {
     // Validate method arguments
     check(cardId1, String);

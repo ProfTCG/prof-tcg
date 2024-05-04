@@ -77,16 +77,7 @@ const UltimatePack = () => {
   }
 };
 
-const isCardDuplicate = (newCard, packItems) => {
-  for (const card of packItems) {
-    if (card !== undefined) {
-      if (card.name === newCard.name && card.rarity === newCard.rarity) {
-        return true;
-      }
-    }
-  }
-  return false;
-};
+const isCardDuplicate = (newCard, packItems) => packItems.some(card => card !== undefined && card.name === newCard.name && card.rarity === newCard.rarity);
 
 const generatePack = (packType) => {
   const packItems = Array(4);

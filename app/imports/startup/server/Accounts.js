@@ -9,6 +9,7 @@ const createUser = (username, password, role) => {
   const userID = Accounts.createUser({
     username: username,
     password: password,
+    lastGiftReceived: new Date(),
   });
   if (role === 'admin') {
     Roles.createRole(role, { unlessExists: true });

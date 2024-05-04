@@ -21,7 +21,6 @@ class CardsCollection {
       backImage: String, // bg image if nesc - does not work rn
       backText: String, // Prof Johnson teaches ICS 314, and built OpenPowerQuality
       owner: String, // user that the card belongs to
-      copies: Number, // how many copies of the card the user has
       isForSale: Boolean, // is the card for sale on the marketplace?
     });
 

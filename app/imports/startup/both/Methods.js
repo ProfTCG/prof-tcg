@@ -54,6 +54,37 @@ Meteor.methods({
 
     return 'Trade successful.';
   },
+
+  'cards.giftRandom'(userId) {
+    console.log('giftRandom');
+    check(userId, String);
+
+    // Ensure the user exists
+    const user = Meteor.users.findOne(userId);
+    if (!user) {
+      throw new Meteor.Error('user-not-found', 'User not found.');
+    }
+
+    // Check if the user has received a gift in the last 24 hours
+    const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    if (user.lastGiftReceived && user.lastGiftReceived > oneDayAgo) {
+      throw new Meteor.Error('gift-received', 'User has already received a gift in the last 24 hours.');
+    }
+
+    // Find a random card owned by the admin
+    const adminCard = Cards.collection.findOne({ owner: 'testAdmin' }); // Replace 'admin' with the actual admin ID
+    if (!adminCard) {
+      throw new Meteor.Error('no-cards', 'No cards available to gift.');
+    }
+
+    // Gift the card to the user
+    Cards.collection.update(adminCard._id, { $set: { owner: userId } });
+    console.log('gifted card', adminCard._id, 'to user', userId);
+    // Update the user's lastGiftReceived field
+    Meteor.users.update(userId, { $set: { lastGiftReceived: new Date() } });
+
+    return 'Gift successful.';
+  },
 });
 
 export { tradeCardsMethod };

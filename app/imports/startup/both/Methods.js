@@ -59,27 +59,44 @@ Meteor.methods({
     console.log('giftRandom');
     check(userId, String);
 
+
     // Ensure the user exists
     const user = Meteor.users.findOne(userId);
     if (!user) {
       throw new Meteor.Error('user-not-found', 'User not found.');
     }
 
-    // Check if the user has received a gift in the last 24 hours
+    // // Check if the user has received a gift in the last 24 hours
     const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
     if (user.lastGiftReceived && user.lastGiftReceived > oneDayAgo) {
+      console.log('date/time err');
+      // alert user on front end
       throw new Meteor.Error('gift-received', 'User has already received a gift in the last 24 hours.');
     }
 
     // Find a random card owned by the admin
-    const adminCard = Cards.collection.findOne({ owner: 'testAdmin' }); // Replace 'admin' with the actual admin ID
+    // this is the testing version The idea is to 'trade' a card from the admin to the user
+    // right now it alwatys gifts the same card not sure how to fix
+    const adminCard = Cards.collection.findOne({ owner: 'testAdmin' });
+
     if (!adminCard) {
       throw new Meteor.Error('no-cards', 'No cards available to gift.');
     }
+    const userName = user.username;
+    // Create a new card with the same properties as the adminCard, but with the owner set to the user
+    const newCard = {
+      ...adminCard,
+      owner: userName,
+    };
 
-    // Gift the card to the user
-    Cards.collection.update(adminCard._id, { $set: { owner: userId } });
-    console.log('gifted card', adminCard._id, 'to user', userId);
+    // Remove the _id property from newCard, because MongoDB will automatically create a new _id for the new document
+    delete newCard._id;
+    Cards.collection.insert(newCard);
+    Cards.collection.update(newCard._id, { $set: { owner: userName } });
+    console.log('gifted card', newCard.profName, 'to user', userName);
+
+
+    // console.log('gifted card', adminCard.profName, 'to user', userName);
     // Update the user's lastGiftReceived field
     Meteor.users.update(userId, { $set: { lastGiftReceived: new Date() } });
 

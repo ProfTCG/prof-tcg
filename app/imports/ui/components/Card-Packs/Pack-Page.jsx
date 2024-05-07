@@ -33,7 +33,7 @@ const PackPage = () => {
   };
   return (
     <div className="container3" style={{ height: '500px' }}>
-      <div style={{ textAlign: 'center', color: 'black', height: '0px', marginRight: '8vw', flexDirection: 'column', marginBottom: '840px'}}>
+      <div style={{ textAlign: 'center', color: 'black', height: '0px', marginRight: '8vw', flexDirection: 'column', marginBottom: '840px' }}>
         <YouHavePacks packCount={userPacks} />
         <h3 className="center-header3">Every day at 8:00 A.M. HST, all users get a free card pack,<br />
           the <b>Standard Pack</b>. You can either open these packs now,<br />

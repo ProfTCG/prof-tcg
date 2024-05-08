@@ -6,11 +6,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
 import AddCardsAdmin from '../pages/AddCardsAdmin';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -22,7 +18,7 @@ import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
 import YourCardsDemo from '../pages/YourCardsDemo';
 import TradeCard from '../pages/TradeCard';
-import CardPacks from '../pages/Card-Packs';
+import PackPage from '../pages/PackPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -44,14 +40,10 @@ const App = () => {
           <Route path="/marketplace" element={<MarketPlace />} />
           <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/cards" element={<ProtectedRoute><YourCardsDemo /></ProtectedRoute>} />
-          <Route path="/card-packs" element={<ProtectedRoute><CardPacks /></ProtectedRoute>} />
-          <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
-          <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
+          <Route path="/packs" element={<ProtectedRoute><PackPage /></ProtectedRoute>} />
           <Route path="/trade/:_id" element={<ProtectedRoute><TradeCard /></ProtectedRoute>} />
           <Route path="/addcards" element={<AdminProtectedRoute ready={ready}><AddCardsAdmin /></AdminProtectedRoute>} />
-          <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

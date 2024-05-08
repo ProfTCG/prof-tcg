@@ -38,7 +38,6 @@ const ProfCard = ({ profCard }) => {
             </div>
             <div className="card-text">
               <h1>{profCard.profName}</h1>
-              {/* <h3>Rarity: {profCard.rarity} Stars</h3> */}
               <p>{profCard.backText}</p>
             </div>
           </div>

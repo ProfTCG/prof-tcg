@@ -42,7 +42,7 @@ const CardPacks = () => {
       <Row>
         <Col>
           <h3>
-            Every day at 8:00 A.M. HST, all users can open a free <b>Standard Pack</b>.
+            Every 24 hours, all users can open a free <b>Standard Pack</b>.
           </h3>
           <Button className="mt-5" variant="primary" onClick={() => addRandomCard()}>Open New Card Pack</Button>
         </Col>

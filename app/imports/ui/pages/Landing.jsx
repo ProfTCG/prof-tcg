@@ -46,10 +46,10 @@ const Landing = () => {
   return (ready ? (
     <Container id="landing-page" fluid className="py-3 overflow-hidden">
 
-      <Row className="align-middle text-center">
+      <Row className="align-middle text-center py-3">
         <Col />
         <Col className="justify-content-end d-inline-flex">
-          <Image src="/images/temp-logo.png" height={200} />
+          <Image src="/images/temp-logo.png" height={275} />
         </Col>
         <Col className="d-flex flex-column justify-content-center text-center">
           <h1 className="display-2 fw-bold">ProfTCG</h1>
@@ -60,11 +60,11 @@ const Landing = () => {
 
       <hr className="style-two" />
 
-      <Row className="align-middle text-center py-4">
+      <Row className="align-middle text-center">
         <Col />
         <Col sm={2} className="d-flex flex-column justify-content-center align-items-center">
-          <h5>Collect cards, trade with friends, and learn more about your UH Manoa professors!</h5>
-          <Button href="/signup" variant="dark" className="my-2">Join Today!</Button>
+          <h4>Collect cards, trade with friends, and learn more about your UH Manoa professors!</h4>
+          <Button href="/signup" variant="dark" className="my-2" size="lg">Join Today!</Button>
         </Col>
 
         { // Display 3 random cards from Admins collection
@@ -80,11 +80,9 @@ const Landing = () => {
       <Row className="align-middle text-center">
         <Col sm={4} />
         <Col sm={6}>
-          <h4>Click on the cards to learn more about each professor!</h4>
+          <h5 className="text-muted fw-light">click on the cards to learn more about each professor!</h5>
         </Col>
       </Row>
-
-      <hr className="style-two" />
 
     </Container>
   ) : <LoadingSpinner />);

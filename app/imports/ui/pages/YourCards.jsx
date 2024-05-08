@@ -57,7 +57,7 @@ const YourCards = () => {
   };
 
   return (ready ? (
-    <Container id="encyclopedia" fluid className="py-3" style={{ cursor: 'url(cursor.cur), auto' }}>
+    <Container id="your-cards" fluid className="py-3" style={{ cursor: 'url(cursor.cur), auto' }}>
       <h1 className="text-center">Your Cards</h1>
       <Row className="py-4">
         <Col xs={2} />

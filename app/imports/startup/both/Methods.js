@@ -59,7 +59,6 @@ Meteor.methods({
     console.log('giftRandom');
     check(userId, String);
 
-
     // Ensure the user exists
     const user = Meteor.users.findOne(userId);
     if (!user) {
@@ -94,7 +93,6 @@ Meteor.methods({
     Cards.collection.insert(newCard);
     Cards.collection.update(newCard._id, { $set: { owner: userName } });
     console.log('gifted card', newCard.profName, 'to user', userName);
-
 
     // console.log('gifted card', adminCard.profName, 'to user', userName);
     // Update the user's lastGiftReceived field

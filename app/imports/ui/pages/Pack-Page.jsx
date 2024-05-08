@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { useParams } from 'react-router';
-import LoadingSpinner from '../LoadingSpinner';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const PackPage = () => {
   const { _id } = useParams();

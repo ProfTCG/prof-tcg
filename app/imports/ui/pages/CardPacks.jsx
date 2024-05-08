@@ -44,7 +44,7 @@ const CardPacks = () => {
           <h3>
             Every day at 8:00 A.M. HST, all users can open a free <b>Standard Pack</b>.
           </h3>
-          <Button variant="primary" onClick={() => addRandomCard()}>Open New Card Pack</Button>
+          <Button className="mt-5" variant="primary" onClick={() => addRandomCard()}>Open New Card Pack</Button>
         </Col>
         <Col className="justify-content-center d-flex">
           <Image src="https://tinyurl.com/mukdjetz" alt="Standard Pack Preview" />

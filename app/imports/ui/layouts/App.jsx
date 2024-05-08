@@ -18,7 +18,7 @@ import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
 import YourCardsDemo from '../pages/YourCardsDemo';
 import TradeCard from '../pages/TradeCard';
-import PackPage from '../pages/Pack-Page';
+import PackPage from '../pages/PackPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {

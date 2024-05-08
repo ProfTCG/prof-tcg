@@ -42,13 +42,10 @@ const YourCards = () => {
           <h2 className="py-3">{rarity} Star Cards</h2>
           <Row>
             {filteredCards.map((card) => (
-              <Col key={card._id}>
-                <div style={{ width: '300px', height: '400px' }}>
-                  <ProfCard profCard={card} />
-                  <Button variant="primary" onClick={() => addToMarketplace(card)}>Add to Marketplace</Button>
-
-                </div>
-              </Col>
+              <div className="m-3" key={card._id} style={{ width: '300px', height: '400px' }}>
+                <ProfCard profCard={card} />
+                <Button variant="primary" onClick={() => addToMarketplace(card)}>Add to Marketplace</Button>
+              </div>
             ))}
           </Row>
         </Col>

@@ -35,17 +35,12 @@ const Marketplace = () => {
         </Col>
       </Row>
       <hr className="style-two" />
-      <Row>
-        <Col sm={2} className="text-center">
-          <h2>Card List</h2>
-          <p>These cards are for sale!</p>
-        </Col>
-
+      <Row className="d-flex justify-content-center">
         {
           cards.filter(prof => prof.isForSale).map((prof, index) => (
-            <Col key={index} sm={3} className="text-center">
+            <Col key={index} sm={3} className="text-center py-3">
               <ProfCard profCard={prof} />
-              <small className="d-block">owner: {prof.owner}</small>
+              <b>Owner: {prof.owner}</b><br />
               <Link to={`/trade/${prof._id}`} className="btn btn-dark">Request Trade</Link>
             </Col>
           ))

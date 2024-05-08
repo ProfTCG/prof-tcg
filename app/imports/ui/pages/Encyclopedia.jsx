@@ -32,11 +32,9 @@ const Encyclopedia = () => {
           <h2 className="py-3">{rarity} Star Cards</h2>
           <Row>
             {filteredCards.map((card) => (
-              <Col key={card._id}>
-                <div style={{ width: '300px', height: '400px' }}>
-                  <ProfCard profCard={card} />
-                </div>
-              </Col>
+              <div className="m-3" key={card._id} style={{ width: '300px', height: '400px' }}>
+                <ProfCard profCard={card} />
+              </div>
             ))}
           </Row>
         </Col>

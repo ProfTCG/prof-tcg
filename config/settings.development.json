@@ -27,22 +27,12 @@
       "isForSale": true
     },
     {
-      "profName": "Philip Johnson",
-      "rarity": "3",
-      "border": "/images/3star-border.png",
-      "profImage": "/images/johnson-card.jpg",
-      "backImage": "/images/johnson-card.jpg",
-      "backText": "teaches ICS 314",
-      "owner": "testAdmin",
-      "isForSale": true
-    },
-    {
       "profName": "Edo Biagioni",
-      "rarity": "3",
-      "border": "/images/3star-border.png",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
       "profImage": "/images/edo-card.jpg",
       "backImage": "/images/edo-card.jpg",
-      "backText": "teaches ICS 111",
+      "backText": "teaches ICS 211",
       "owner": "testJohn",
       "isForSale": true
     },
@@ -55,7 +45,46 @@
       "backText": "Lucas is not a professor",
       "owner": "testJohn",
       "isForSale": false
+    },
+    {
+      "profName": "Philip Johnson",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/johnson-card.jpg",
+      "backImage": "/images/johnson-card.jpg",
+      "backText": "teaches ICS 314",
+      "owner": "testAdmin",
+      "isForSale": true
+    },
+    {
+      "profName": "Cam Moore",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/johnson-card.jpg",
+      "backImage": "/images/johnson-card.jpg",
+      "backText": "teaches ICS 314",
+      "owner": "testAdmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Scott Robertson",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/johnson-card.jpg",
+      "backImage": "/images/johnson-card.jpg",
+      "backText": "teaches ICS 111",
+      "owner": "testAdmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Depeng Li",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/johnson-card.jpg",
+      "backImage": "/images/johnson-card.jpg",
+      "backText": "teaches ICS 141",
+      "owner": "testAdmin",
+      "isForSale": false
     }
-
   ]
 }

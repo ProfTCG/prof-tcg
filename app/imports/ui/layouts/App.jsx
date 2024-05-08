@@ -18,7 +18,7 @@ import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
 import YourCards from '../pages/YourCards';
 import TradeCard from '../pages/TradeCard';
-import PackPage from '../pages/PackPage';
+import CardPacks from '../pages/CardPacks';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -41,7 +41,7 @@ const App = () => {
           <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/cards" element={<ProtectedRoute><YourCards /></ProtectedRoute>} />
-          <Route path="/packs" element={<ProtectedRoute><PackPage /></ProtectedRoute>} />
+          <Route path="/packs" element={<ProtectedRoute><CardPacks /></ProtectedRoute>} />
           <Route path="/trade/:_id" element={<ProtectedRoute><TradeCard /></ProtectedRoute>} />
           <Route path="/addcards" element={<AdminProtectedRoute ready={ready}><AddCardsAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />

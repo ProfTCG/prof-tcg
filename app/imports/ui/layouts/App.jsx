@@ -16,7 +16,7 @@ import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
-import YourCardsDemo from '../pages/YourCardsDemo';
+import YourCards from '../pages/YourCards';
 import TradeCard from '../pages/TradeCard';
 import PackPage from '../pages/PackPage';
 
@@ -40,7 +40,7 @@ const App = () => {
           <Route path="/marketplace" element={<MarketPlace />} />
           <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          <Route path="/cards" element={<ProtectedRoute><YourCardsDemo /></ProtectedRoute>} />
+          <Route path="/cards" element={<ProtectedRoute><YourCards /></ProtectedRoute>} />
           <Route path="/packs" element={<ProtectedRoute><PackPage /></ProtectedRoute>} />
           <Route path="/trade/:_id" element={<ProtectedRoute><TradeCard /></ProtectedRoute>} />
           <Route path="/addcards" element={<AdminProtectedRoute ready={ready}><AddCardsAdmin /></AdminProtectedRoute>} />

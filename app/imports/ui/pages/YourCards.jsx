@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import CardCloseups from '../components/CardCloseups';
 
-const YourCardsDemo = () => (
+const YourCards = () => (
   <Container id="your-cards">
     <div>
       <CardCloseups />
@@ -12,4 +12,4 @@ const YourCardsDemo = () => (
 
 );
 
-export default YourCardsDemo;
+export default YourCards;

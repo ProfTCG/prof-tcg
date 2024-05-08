@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, NumField, SubmitField, TextField, LongTextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, NumField, RadioField, SubmitField, LongTextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 // import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
+import * as _ from 'underscore';
 import { Cards } from '../../api/card/Cards.js';
 
 // Create a schema to specify the structure of the data to appear in the form.
@@ -13,39 +14,60 @@ const formSchema = new SimpleSchema({
   rarity: {
     type: Number,
     // https://github.com/Meteor-Community-Packages/meteor-simple-schema#allowedvalues for information on acceptable input validation
-    allowedValues: [1, 2, 3, 4],
+    min: 1,
+    max: 4,
   },
-  profImage: String,
-  backImage: String,
   backText: String,
+  quantity: {
+    type: Number,
+    min: 1,
+  },
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddStuff page for adding a document. */
+// Add more templates when more images are available
+const professorTemplates = [
+  { profName: 'Edoardo Biagioni', image: '/images/edo-card.jpg' },
+  { profName: 'Philip Johnson', image: '/images/johnson-card.jpg' },
+  { profName: 'Chad Morita', image: '/images/morita-card.jpg' }];
+
+/* Renders the AddCardsAdmin page for adding a document. */
 const AddCardsAdmin = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { profName, rarity, profImage, backImage, backText } = data;
+    // Data from the form
+    const { profName, rarity, backText, quantity } = data;
+    let { profImage, backImage } = '/images/temp-logo.jpg';
+    // If we have a template for this professor, use the image linked in the template instead of temp placeholder
+    const professor = _.find(professorTemplates, (someone) => someone.profName === profName);
+    if (professor !== undefined) {
+      profImage = professor.image;
+      backImage = profImage;
+    }
     const border = `/images/${rarity}star-border.png`;
     const isForSale = false;
     const owner = 'testAdmin';
-    Cards.collection.insert(
-      { profName, rarity, profImage, border, backImage, backText, isForSale, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      },
-    );
+    for (let i = 0; i < quantity; i++) {
+      Cards.collection.insert(
+        { profName, rarity, profImage, border, backImage, backText, isForSale, owner },
+        (error) => {
+          if (error) {
+            swal('Error', error.message, 'error');
+          } else {
+            swal('Success', 'Item added successfully', 'success');
+            formRef.reset();
+          }
+        },
+      );
+    }
   };
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
+
+  const professorOptions = _.map(professorTemplates, (professor) => ({ label: professor.profName, value: professor.profName }));
 
   return (
     <Container className="py-3" id="add-cards">
@@ -55,11 +77,10 @@ const AddCardsAdmin = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField label="Professor Name" name="profName" />
+                <RadioField label="Professor Name" name="profName" options={professorOptions} />
                 <NumField min="1" max="4" name="rarity" decimal={null} />
-                <TextField label="Professor Image" name="profImage" />
-                <TextField label="Back Image" name="backImage" />
                 <LongTextField label="Back Text" name="backText" />
+                <NumField min="1" name="quantity" decimal={null} />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

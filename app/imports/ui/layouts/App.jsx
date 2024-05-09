@@ -14,7 +14,7 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
-import MarketPlace from '../pages/Marketplace';
+import MarketPlace from '../pages/Marketplace2';
 import Encyclopedia from '../pages/Encyclopedia';
 import YourCards from '../pages/YourCards2';
 import TradeCard from '../pages/TradeCard';

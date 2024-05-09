@@ -43,7 +43,7 @@
       "profName": "Edo Biagioni",
       "rarity": "3",
       "border": "/images/3star-border.png",
-      "profImage": "/images/profImages/edo-card.png",
+      "profImage": "/images/profImages/edo-card-3.png",
       "backText": "Edo teaches ICS 491 Special Topics (Blockchain and Cryptocurrencies). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
       "owner": "encyclopedia",
       "isForSale": false
@@ -97,7 +97,7 @@
       "profName": "Nodari Sitchinava",
       "rarity": "2",
       "border": "/images/2star-border.png",
-      "profImage": "/images/sitchinava-card.jpg",
+      "profImage": "/images/profImages/sitchinava-card.png",
       "backText": "Professor Sitchinava teaches ICS 311 Algorithms. His research focuses on algorithms for modern parallel systems. He is also interested in computational geometry and graph algorithms.",
       "owner": "encyclopedia",
       "isForSale": false
@@ -115,7 +115,7 @@
       "profName": "Depeng Li",
       "rarity": "1",
       "border": "/images/1star-border.png",
-      "profImage": "/images/li-card.jpg",
+      "profImage": "/images/profImages/li-card.png",
       "backText": "Professor Li teaches ICS 141 and ICS 241 (Discrete Math for Computer Science I and II). He is an associate professor and a member of the ASECOLab.",
       "owner": "encyclopedia",
       "isForSale": false
@@ -217,7 +217,7 @@
       "profName": "Nodari Sitchinava",
       "rarity": "2",
       "border": "/images/2star-border.png",
-      "profImage": "/images/sitchinava-card.jpg",
+      "profImage": "/images/profImages/sitchinava-card.png",
       "backText": "Professor Sitchinava teaches ICS 311 Algorithms. His research focuses on algorithms for modern parallel systems. He is also interested in computational geometry and graph algorithms.",
       "owner": "testadmin",
       "isForSale": false
@@ -235,7 +235,7 @@
       "profName": "Depeng Li",
       "rarity": "1",
       "border": "/images/1star-border.png",
-      "profImage": "/images/li-card.jpg",
+      "profImage": "/images/profImages/li-card.png",
       "backText": "Professor Li teaches ICS 141 and ICS 241 (Discrete Math for Computer Science I and II). He is an associate professor and a member of the ASECOLab.",
       "owner": "testadmin",
       "isForSale": false
@@ -337,7 +337,7 @@
       "profName": "Nodari Sitchinava",
       "rarity": "2",
       "border": "/images/2star-border.png",
-      "profImage": "/images/sitchinava-card.jpg",
+      "profImage": "/images/profImages/sitchinava-card.png",
       "backText": "Professor Sitchinava teaches ICS 311 Algorithms. His research focuses on algorithms for modern parallel systems. He is also interested in computational geometry and graph algorithms.",
       "owner": "testjohn",
       "isForSale": true
@@ -355,7 +355,7 @@
       "profName": "Depeng Li",
       "rarity": "1",
       "border": "/images/1star-border.png",
-      "profImage": "/images/li-card.jpg",
+      "profImage": "/images/profImages/li-card.png",
       "backText": "Professor Li teaches ICS 141 and ICS 241 (Discrete Math for Computer Science I and II). He is an associate professor and a member of the ASECOLab.",
       "owner": "testjohn",
       "isForSale": true

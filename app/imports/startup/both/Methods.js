@@ -97,7 +97,7 @@ Meteor.methods({
     // Find a random card owned by the admin
     // this is the testing version The idea is to 'trade' a card from the admin to the user
     // right now it alwatys gifts the same card not sure how to fix
-    const docs = Cards.collection.find({ owner: 'testAdmin' }).fetch();
+    const docs = Cards.collection.find({ owner: 'testadmin' }).fetch();
     // Pick 3 random cards
     const adminCardArr = shuffleArray(docs).slice(0, 1); // shuffleArray is a function to shuffle the array
     const adminCard = adminCardArr[0];

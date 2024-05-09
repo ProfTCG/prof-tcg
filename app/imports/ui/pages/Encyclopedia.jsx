@@ -27,16 +27,13 @@ const EncyclopediaCards = () => {
       <h1 className="text-center">Trading Card Encyclopedia</h1>
       <Row className="py-4">
         <Col xs={2}/>
-        <Col>
+        <Col style={{ textAlign: 'center' }}>
           <p>ProfTCG uses a rarity system to help determine how cards are awarded to users.</p>
           <p>Each trading card will be assigned one of the following rarities:</p>
           <ul>
-            <li>1 star: For lower division courses</li>
-            <li>2 star: For upper division courses</li>
-            <li>3 star: For graduate division courses</li>
+            <p>1 Star, 2 Stars, 3 Stars, 4 Stars</p>
           </ul>
-          <p>Additionally, a Professor&apos;s card(s) may receive additional &quot;embellishments&quot; to recognize some of their accomplishments from that academic year (i.e. awards or honors).</p>
-          <p>Cards are being added regularly. Be sure to check back soon!</p>
+          <p>Click on the cards below to see a brief overview of the Professor you selected.<br />Once collected, visit the Your Cards page to see an extended description.</p>
         </Col>
         <Col xs={2}/>
       </Row>

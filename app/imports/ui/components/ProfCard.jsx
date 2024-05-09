@@ -6,11 +6,15 @@ import ReactParallaxTilt from 'react-parallax-tilt';
 import { Image } from 'react-bootstrap';
 
 /** Renders a single professor trading card. See pages/Encyclopedia.jsx. */
-const ProfCard = ({ profCard }) => {
+const ProfCard = ({ profCard, clickable }) => {
   // TODO: Determine display format, determine card schema(s). See stuff/Cards.js
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    if (clickable) {
+      setShow(true);
+    }
+  }
   return (
     <>
       <Modal show={show} onHide={handleClose} className="custom-modal" dialogClassName="modal-90w">

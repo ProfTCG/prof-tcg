@@ -39,7 +39,7 @@ const Marketplace = () => {
         <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap', marginLeft: '54px' }}>
           {cards.filter(prof => prof.isForSale).map((prof, index) => (
             <div key={index} style={{ margin: '60px 60px 0px 2px' }}>
-              <ProfCard profCard={prof} />
+              <ProfCard profCard={prof} clickable={false}/>
               <b style={{ position: 'relative', top: '-35px', textAlign: 'center', justifyContent: 'center', display: 'flex' }}>Owner: {prof.owner}</b><br />
               <Link to={`/trade/${prof._id}`} className="btn btn-dark"  style={{ position: 'relative', justifyContent: 'center', display: 'flex', top: '-40px', width: '150px', marginLeft: '37px' }}
               >Request Trade</Link>

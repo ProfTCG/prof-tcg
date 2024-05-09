@@ -50,7 +50,7 @@ const YourCards = () => {
         <div style={{flexDirection: 'row', display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap', marginLeft: '54px' }}>
         {filteredCards.map((card) => (
           <div key={card._id} style={{ margin: '60px 60px 0px 2px' }}>
-            <ProfCard profCard={card}/>
+            <ProfCard profCard={card} clickable={true}/>
             <Button
               variant="primary"
               style={{ position: 'relative', marginLeft: '24px', marginBottom: '50px' }}

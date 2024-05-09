@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, NumField, RadioField, SubmitField, LongTextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, LongTextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 // import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -30,7 +30,15 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 const professorTemplates = [
   { profName: 'Edoardo Biagioni', image: '/images/edo-card.jpg' },
   { profName: 'Philip Johnson', image: '/images/johnson-card.jpg' },
-  { profName: 'Chad Morita', image: '/images/morita-card.jpg' }];
+  { profName: 'Chad Morita', image: '/images/morita-card.jpg' },
+  { profName: 'Kate Binsted', image: '/images/binsted-card.jpg' },
+  { profName: 'Henri Casanova', image: '/images/casanova-card.jpg' },
+  { profName: 'Depeng Li', image: '/images/li-card.jpg' },
+  { profName: 'Scott Robertson', image: '/images/robertson-card.jpg' },
+  { profName: 'Dan Suthers', image: '/images/suthers-card.jpg' },
+  { profName: 'Peter-Michael Seidel', image: '/images/seidel-card.jpg' },
+  { profName: 'Nodari Sitchinava', image: '/images/sitchinava-card.jpg' },
+];
 
 /* Renders the AddCardsAdmin page for adding a document. */
 const AddCardsAdmin = () => {
@@ -77,7 +85,7 @@ const AddCardsAdmin = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <RadioField label="Professor Name" name="profName" options={professorOptions} />
+                <SelectField label="Professor Name" name="profName" options={professorOptions} />
                 <NumField min="1" max="4" name="rarity" decimal={null} />
                 <LongTextField label="Back Text" name="backText" />
                 <NumField min="1" name="quantity" decimal={null} />

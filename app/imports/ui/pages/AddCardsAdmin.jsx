@@ -28,16 +28,16 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 
 // Add more templates when more images are available
 const professorTemplates = [
-  { profName: 'Edoardo Biagioni', image: '/images/edo-card.jpg' },
-  { profName: 'Philip Johnson', image: '/images/johnson-card.jpg' },
-  { profName: 'Chad Morita', image: '/images/morita-card.jpg' },
-  { profName: 'Kate Binsted', image: '/images/binsted-card.jpg' },
-  { profName: 'Henri Casanova', image: '/images/casanova-card.jpg' },
-  { profName: 'Depeng Li', image: '/images/li-card.jpg' },
-  { profName: 'Scott Robertson', image: '/images/robertson-card.jpg' },
-  { profName: 'Dan Suthers', image: '/images/suthers-card.jpg' },
-  { profName: 'Peter-Michael Seidel', image: '/images/seidel-card.jpg' },
-  { profName: 'Nodari Sitchinava', image: '/images/sitchinava-card.jpg' },
+  { profName: 'Edoardo Biagioni', image: '/images/profImages/edo-card.png' },
+  { profName: 'Philip Johnson', image: '/images/profImages/johnson-card.png' },
+  { profName: 'Chad Morita', image: '/images/profImages/morita-card.png' },
+  { profName: 'Kate Binsted', image: '/images/profImages/binsted-card.png' },
+  { profName: 'Henri Casanova', image: '/images/profImages/casanova-card.png' },
+  { profName: 'Depeng Li', image: '/images/profImages/li-card.png' },
+  { profName: 'Scott Robertson', image: '/images/profImages/robertson-card.png' },
+  { profName: 'Dan Suthers', image: '/images/profImages/suthers-card.png' },
+  { profName: 'Peter-Michael Seidel', image: '/images/profImages/seidel-card.png' },
+  { profName: 'Nodari Sitchinava', image: '/images/profImages/sitchinava-card.png' },
 ];
 
 /* Renders the AddCardsAdmin page for adding a document. */

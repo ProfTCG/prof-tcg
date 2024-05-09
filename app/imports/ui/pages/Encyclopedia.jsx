@@ -16,8 +16,8 @@ const Encyclopedia = () => {
     const subscription = Meteor.subscribe('allCards');
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the cards
-    const cardsList = Cards.collection.find().fetch();
+    // Get the cards from the encyclopedia account
+    const cardsList = Cards.collection.find({ owner: 'encyclopedia' }).fetch();
     return {
       cards: cardsList,
       ready: rdy,

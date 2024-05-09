@@ -7,7 +7,7 @@ import { ArrowLeft } from 'react-bootstrap-icons';
 import swal from 'sweetalert';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Cards } from '../../api/card/Cards';
-import ProfCard from '../components/ProfCard2';
+import ProfCard from '../components/ProfCard';
 import { tradeCardsMethod } from '../../startup/both/Methods';
 
 const TradeCard = () => {

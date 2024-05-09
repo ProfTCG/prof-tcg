@@ -7,40 +7,9 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import PackOpenButton from '../components/CardPacks/Pack-Opener';
 
 const CardPacks = () => {
-  const { _id } = useParams();
-  // Set default state for dropdown menu
-  // console.log('TradeCard', _id);
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready } = useTracker(() => {
-    // Get access to all cards.
-    const sub1 = Meteor.subscribe('allCards');
-    // Determine if the subscription is ready
-    const rdy = sub1.ready();
-    // Get documents
-    // Get current user's card collection
-    return {
-      current: sub1,
-      ready: rdy,
-    };
-  }, [_id]);
-
-  const addRandomCard = () => {
-    Meteor.call('cards.giftRandom', Meteor.userId(), (error, result) => {
-      console.log('trying to add random card');
-      if (error) {
-        if (error.error === 'gift-received') {
-          console.error('You have already opened your daily pack. Please try again in 24 hours.');
-        } else {
-          console.error('Error gifting card:', error);
-        }
-      } else {
-        console.log(result);
-      }
-    });
-  };
-  return (ready) ? (
+  return (
     <Container className="py-4" style={{ display: 'flex' }}>
-      <Row style={{ marginLeft: '50px' }}>
+      <Row style={{ marginLeft: '80px' }}>
         <Col style={{ position: 'relative', top: '120px', textAlign: 'center' }}>
           <h3 style={{ fontSize: '34px', whiteSpace: 'nowrap' }}>
             Opening Your Card Packs
@@ -48,20 +17,16 @@ const CardPacks = () => {
           <h3 style={{ fontSize: '26px', whiteSpace: 'nowrap'  }}>
             Every 24 hours, all users can open a free <b>Card Pack</b>.<br />
             Each Card Pack contains four random Professors.<br />
-            For the drop rates of each rarity, click here.
+            Click on the button below to open one pack.
           </h3>
-          <PackOpenButton
-            packCounter={1}
-            buttonType={1}
-            packTypeCounter={0}
-          />
+          <PackOpenButton />
         </Col>
-        <Col style={{ position: 'relative', left: '150px', marginTop: '45px' }}>
-          <Image src="https://tinyurl.com/mukdjetz" alt="Standard Pack Preview" />
+        <Col style={{ position: 'relative', left: '150px', marginTop: '35px' }}>
+          <Image style={{ height: '325px' }} src="https://res.cloudinary.com/dxiainweb/image/upload/v1715232501/stock_chest_d6bpok.jpg" alt="Standard Pack Preview" />
         </Col>
       </Row>
     </Container>
-  ) : <LoadingSpinner />;
+  )
 };
 
 export default CardPacks;

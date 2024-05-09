@@ -37,7 +37,7 @@ const SignUp = ({ location }) => {
   const { from } = location?.state || { from: { pathname: '/add' } };
   // if correct authentication, redirect to from: page instead of signup screen
   if (redirectToReferer) {
-    return <Navigate to={from} />;
+    return <Navigate to="/home" />;
   }
   return (
     <Container id="signup-page" className="py-3">

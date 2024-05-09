@@ -34,20 +34,21 @@ const Marketplace = () => {
           <p>Here you can see all cards available for trade from other users!</p>
         </Col>
       </Row>
-      <hr className="style-two" />
-      <Row className="d-flex justify-content-center">
-        {
-          cards.filter(prof => prof.isForSale).map((prof, index) => (
-            <Col key={index} sm={3} className="text-center py-3">
+      <hr className="style-two"/>
+      <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div style={{ flexDirection: 'row', display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap', marginLeft: '54px' }}>
+          {cards.filter(prof => prof.isForSale).map((prof, index) => (
+            <div key={index} style={{ margin: '60px 60px 0px 2px' }}>
               <ProfCard profCard={prof} />
-              <b>Owner: {prof.owner}</b><br />
-              <Link to={`/trade/${prof._id}`} className="btn btn-dark">Request Trade</Link>
-            </Col>
-          ))
-        }
-      </Row>
+              <b style={{ position: 'relative', top: '-35px', textAlign: 'center', justifyContent: 'center', display: 'flex' }}>Owner: {prof.owner}</b><br />
+              <Link to={`/trade/${prof._id}`} className="btn btn-dark"  style={{ position: 'relative', justifyContent: 'center', display: 'flex', top: '-40px', width: '150px', marginLeft: '37px' }}
+              >Request Trade</Link>
+            </div>
+          ))}
+        </div>
+      </div>
     </Container>
-  ) : <LoadingSpinner />);
+  ) : <LoadingSpinner/>);
 };
 
 export default Marketplace;

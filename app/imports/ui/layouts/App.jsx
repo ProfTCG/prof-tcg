@@ -6,7 +6,6 @@ import { Roles } from 'meteor/alanning:roles';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import AddCardsAdmin from '../pages/AddCardsAdmin';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -14,9 +13,9 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
-import MarketPlace from '../pages/Marketplace2';
+import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
-import YourCards from '../pages/YourCards2';
+import YourCards from '../pages/YourCards';
 import TradeCard from '../pages/TradeCard';
 import CardPacks from '../pages/CardPacks';
 
@@ -43,7 +42,6 @@ const App = () => {
           <Route path="/cards" element={<ProtectedRoute><YourCards /></ProtectedRoute>} />
           <Route path="/packs" element={<ProtectedRoute><CardPacks /></ProtectedRoute>} />
           <Route path="/trade/:_id" element={<ProtectedRoute><TradeCard /></ProtectedRoute>} />
-          <Route path="/addcards" element={<AdminProtectedRoute ready={ready}><AddCardsAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

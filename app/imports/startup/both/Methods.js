@@ -49,8 +49,8 @@ Meteor.methods({
     Cards.collection.update(card1._id, { $set: { owner: owner2 } });
     Cards.collection.update(card2._id, { $set: { owner: owner1 } });
     // Resets isForSale
-    // Cards.collection.update(card1._id, { $set: { isForSale: false } });
-    // Cards.collection.update(card2._id, { $set: { isForSale: false } });
+    Cards.collection.update(card1._id, { $set: { isForSale: false } });
+    Cards.collection.update(card2._id, { $set: { isForSale: false } });
 
     return 'Trade successful.';
   },
@@ -72,32 +72,7 @@ Meteor.methods({
       // alert user on front end
       throw new Meteor.Error('gift-received', 'User has already received a gift in the last 24 hours.');
     }
-
-    // Find a random card owned by the admin
-    // this is the testing version The idea is to 'trade' a card from the admin to the user
-    // right now it alwatys gifts the same card not sure how to fix
-    const adminCard = Cards.collection.findOne({ owner: 'testAdmin' });
-
-    if (!adminCard) {
-      throw new Meteor.Error('no-cards', 'No cards available to gift.');
-    }
-    const userName = user.username;
-    // Create a new card with the same properties as the adminCard, but with the owner set to the user
-    const newCard = {
-      ...adminCard,
-      owner: userName,
-    };
-
-    // Remove the _id property from newCard, because MongoDB will automatically create a new _id for the new document
-    delete newCard._id;
-    Cards.collection.insert(newCard);
-    Cards.collection.update(newCard._id, { $set: { owner: userName } });
-    console.log('gifted card', newCard.profName, 'to user', userName);
-
-    // console.log('gifted card', adminCard.profName, 'to user', userName);
-    // Update the user's lastGiftReceived field
     Meteor.users.update(userId, { $set: { lastGiftReceived: new Date() } });
-
     return 'Gift successful.';
   },
 });

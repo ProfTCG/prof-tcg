@@ -15,47 +15,39 @@ const ProfCard = ({ profCard }) => {
     <>
       <Modal show={show} onHide={handleClose} className="custom-modal" dialogClassName="modal-90w">
         <Modal.Body>
-          <div style={{ justifyContent: 'space-around', display: 'flex' }}>
-            <div style={{ height: '410px', width: '290px', marginRight: '100%' }}>
-              <ReactParallaxTilt
-                glareEnable
-                glarePosition="all"
-                glareMaxOpacity="0.15"
-              >
-                <Image
-                  style={{
-                    backgroundImage: `url(${profCard.profImage})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: '264px 350px',
-                    backgroundPosition: 'center',
-                    width: '300px',
-                    height: '400px',
-                    cursor: 'pointer',
-                  }}
-                  src={profCard.border}
-                />
-              </ReactParallaxTilt>
-            </div>
-            <div className="card-text">
-              <h1>{profCard.profName}</h1>
-              <p>{profCard.backText}</p>
+          <div style={{ justifyContent: 'center', flexDirection: 'row', display: 'flex', position: 'absolute' }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ marginTop: '120px', marginLeft: '-30px' }}>
+                <ReactParallaxTilt
+                  glareEnable
+                  glareMaxOpacity="0.15"
+                >
+                  <img className="encyclopedia-closeup" src={profCard.profImage} alt="lol"/>
+                </ReactParallaxTilt>
+              </div>
+              <div style={{ position: 'absolute', left: '250px', textAlign: 'center' }}>
+                <h3 style={{ color: 'white', marginLeft: '90px', fontSize: '38px', whiteSpace: 'nowrap', marginTop: '100px', fontFamily: 'Orbitron, serif' }}>{profCard.profName}</h3>
+                <h3 style={{ color: 'white', marginLeft: '90px', fontSize: '30px', marginTop: '20px', width: '550px', textAlign: 'center' }}>
+                  {profCard.backText}
+                </h3>
+              </div>
             </div>
           </div>
         </Modal.Body>
       </Modal>
 
       <ReactParallaxTilt>
-          <Image
-            className="card-entries"
-            src={profCard.border}
-            alt="professor card"
-            onClick={handleShow}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' || event.key === 'Space') {
-                handleShow();
-              }
-            }}
-          />
+        <Image
+          className="card-entries"
+          src={profCard.border}
+          alt="professor card"
+          onClick={handleShow}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === 'Space') {
+              handleShow();
+            }
+          }}
+        />
       </ReactParallaxTilt>
     </>
   );

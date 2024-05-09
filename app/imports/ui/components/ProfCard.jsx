@@ -45,23 +45,8 @@ const ProfCard = ({ profCard }) => {
       </Modal>
 
       <ReactParallaxTilt>
-        <div style={{
-          position: 'relative',
-          width: '300px',
-          height: '400px',
-          margin: 'auto',
-        }}
-        >
           <Image
-            style={{
-              backgroundImage: `url(${profCard.profImage})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '264px 350px',
-              backgroundPosition: 'center',
-              width: '300px',
-              height: '400px',
-              cursor: 'pointer',
-            }}
+            className="card-entries"
             src={profCard.border}
             alt="professor card"
             onClick={handleShow}
@@ -71,16 +56,6 @@ const ProfCard = ({ profCard }) => {
               }
             }}
           />
-          <div style={{
-            position: 'absolute',
-            top: '20px',
-            left: '30px',
-            color: 'white',
-          }}
-          >
-            <strong>{profCard.profName}</strong>
-          </div>
-        </div>
       </ReactParallaxTilt>
     </>
   );

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Button, Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { useParams } from 'react-router';
 import LoadingSpinner from '../components/LoadingSpinner';
+import PackOpenButton from '../components/CardPacks/Pack-Opener';
 
 const CardPacks = () => {
   const { _id } = useParams();
@@ -38,15 +39,24 @@ const CardPacks = () => {
     });
   };
   return (ready) ? (
-    <Container className="py-4">
-      <Row>
-        <Col>
-          <h3>
-            Every 24 hours, all users can open a free <b>Standard Pack</b>.
+    <Container className="py-4" style={{ display: 'flex' }}>
+      <Row style={{ marginLeft: '50px' }}>
+        <Col style={{ position: 'relative', top: '120px', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '34px', whiteSpace: 'nowrap' }}>
+            Opening Your Card Packs
           </h3>
-          <Button className="mt-5" variant="primary" onClick={() => addRandomCard()}>Open New Card Pack</Button>
+          <h3 style={{ fontSize: '26px', whiteSpace: 'nowrap'  }}>
+            Every 24 hours, all users can open a free <b>Card Pack</b>.<br />
+            Each Card Pack contains four random Professors.<br />
+            For the drop rates of each rarity, click here.
+          </h3>
+          <PackOpenButton
+            packCounter={1}
+            buttonType={1}
+            packTypeCounter={0}
+          />
         </Col>
-        <Col className="justify-content-center d-flex">
+        <Col style={{ position: 'relative', left: '150px', marginTop: '45px' }}>
           <Image src="https://tinyurl.com/mukdjetz" alt="Standard Pack Preview" />
         </Col>
       </Row>

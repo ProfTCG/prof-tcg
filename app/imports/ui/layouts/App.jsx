@@ -16,7 +16,7 @@ import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import MarketPlace from '../pages/Marketplace';
 import Encyclopedia from '../pages/Encyclopedia';
-import YourCards from '../pages/YourCards';
+import YourCards from '../pages/YourCards2';
 import TradeCard from '../pages/TradeCard';
 import CardPacks from '../pages/CardPacks';
 

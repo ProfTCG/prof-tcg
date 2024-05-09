@@ -22,18 +22,9 @@
 
   "defaultCards": [
     {
-      "profName": "Chad Morita",
-      "rarity": "3",
-      "border": "/images/3star-border.png",
-      "profImage": "/images/morita-card.jpg",
-      "backText": "Chad Morita is a first year instructor, teaching ICS 314 Software Engineering and 332 Operating Systems.",
-      "owner": "encyclopedia",
-      "isForSale": false
-    },
-    {
       "profName": "Dan Port",
-      "rarity": "3",
-      "border": "/images/3star-border.png",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
       "profImage": "/images/port-card.jpeg",
       "backText": "He teaches ICS 314 Software Engineering and got his Ph.D. in Mathematics and Theoretical Computer Science at MIT.",
       "owner": "encyclopedia",
@@ -41,17 +32,35 @@
     },
     {
       "profName": "Edo Biagioni",
-      "rarity": "2",
-      "border": "/images/2star-border.png",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
       "profImage": "/images/edo-card.jpg",
       "backText": "Edo teaches ICS 211 Intro to CS II (Data Structures). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
       "owner": "encyclopedia",
       "isForSale": false
     },
     {
-      "profName": "Philip Johnson",
+      "profName": "Edo Biagioni",
       "rarity": "3",
       "border": "/images/3star-border.png",
+      "profImage": "/images/edo-card.jpg",
+      "backText": "Edo teaches ICS 491 Special Topics (Blockchain and Cryptocurrencies). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Peter-Michael Seidel",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/seidel-card.jpg",
+      "backText": "Peter-Michael Seidel teaches ICS 355 (Security and Trust I) and ICS 331 (Logic Design and Microprocessors). He is an associate professor and a member of the ASECOLab.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Philip Johnson",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
       "profImage": "/images/johnson-card.jpg",
       "backText": "Professor Johnson teaches ICS 314 Software Engineering. Fun Fact: He is the Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.",
       "owner": "encyclopedia",
@@ -59,93 +68,315 @@
     },
     {
       "profName": "Cam Moore",
-      "rarity": "3",
-      "border": "/images/3star-border.png",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
       "profImage": "/images/moore-card.jpeg",
       "backText": "Cam Moore teaches ICS 314. A project he's worked on is RadGrad.",
       "owner": "encyclopedia",
       "isForSale": false
     },
     {
-      "profName": "Scott Robertson",
+      "profName": "Cam Moore",
       "rarity": "1",
       "border": "/images/1star-border.png",
-      "profImage": "/images/robertson-card.jpeg",
-      "backText": "Professor Robertson teaches ICS 111. Fun Fact: He was a child actor, appearing on The Brady Bunch.",
+      "profImage": "/images/moore-card.jpeg",
+      "backText": "Cam Moore teaches ICS 111. A project he's worked on is RadGrad.",
       "owner": "encyclopedia",
       "isForSale": false
     },
     {
       "profName": "Kim Binsted",
-      "rarity": "4",
-      "border": "/images/4star-border.png",
-      "profImage": "/images/binsted-card.jpeg",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/binsted-card.jpg",
       "backText": "Professor Binsted teaches ICS 461 Artificial Intelligence. Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as \"What do you call a Martian who drinks beer? An ale-ien!\".",
       "owner": "encyclopedia",
       "isForSale": false
     },
     {
-      "profName": "Chad Morita",
+      "profName": "Nodari Sitchinava",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/sitchinava-card.jpg",
+      "backText": "Professor Sitchinava teaches ICS 311 Algorithms. His research focuses on algorithms for modern parallel systems. He is also interested in computational geometry and graph algorithms.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Dan Suthers",
       "rarity": "3",
       "border": "/images/3star-border.png",
+      "profImage": "/images/suthers-card.jpg",
+      "backText": "Professor Suthers teaches ICS 668 Social Informatics. His research interests are: Technology Enhanced Learning, Human-Computer Interaction, Social Informatics, and Cognitive, social and computational perspectives on designing and evaluating software for learning, collaboration, and community.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Depeng Li",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/li-card.jpg",
+      "backText": "Professor Li teaches ICS 141 and ICS 241 (Discrete Math for Computer Science I and II). He is an associate professor and a member of the ASECOLab.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Scott Robertson",
+      "rarity": "4",
+      "border": "/images/4star-border.png",
+      "profImage": "/images/robertson-card.jpg",
+      "backText": "Scott Robertson is a professor and is currently the ICS Department Chair. Fun Fact: He was a child actor, appearing on The Brady Bunch.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Chad Morita",
+      "rarity": "4",
+      "border": "/images/4star-border.png",
       "profImage": "/images/morita-card.jpg",
       "backText": "Chad Morita is a first year instructor, teaching ICS 314 Software Engineering and 332 Operating Systems.",
-      "owner": "testJohn",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+
+
+
+    {
+      "profName": "Dan Port",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/port-card.jpeg",
+      "backText": "He teaches ICS 314 Software Engineering and got his Ph.D. in Mathematics and Theoretical Computer Science at MIT.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Edo Biagioni",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/edo-card.jpg",
+      "backText": "Edo teaches ICS 211 Intro to CS II (Data Structures). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Edo Biagioni",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/edo-card.jpg",
+      "backText": "Edo teaches ICS 491 Special Topics (Blockchain and Cryptocurrencies). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Peter-Michael Seidel",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/seidel-card.jpg",
+      "backText": "Peter-Michael Seidel teaches ICS 355 (Security and Trust I) and ICS 331 (Logic Design and Microprocessors). He is an associate professor and a member of the ASECOLab.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Philip Johnson",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/johnson-card.jpg",
+      "backText": "Professor Johnson teaches ICS 314 Software Engineering. Fun Fact: He is the Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Cam Moore",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/moore-card.jpeg",
+      "backText": "Cam Moore teaches ICS 314. A project he's worked on is RadGrad.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Cam Moore",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/moore-card.jpeg",
+      "backText": "Cam Moore teaches ICS 111. A project he's worked on is RadGrad.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Kim Binsted",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/binsted-card.jpg",
+      "backText": "Professor Binsted teaches ICS 461 Artificial Intelligence. Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as \"What do you call a Martian who drinks beer? An ale-ien!\".",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Nodari Sitchinava",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/sitchinava-card.jpg",
+      "backText": "Professor Sitchinava teaches ICS 311 Algorithms. His research focuses on algorithms for modern parallel systems. He is also interested in computational geometry and graph algorithms.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Dan Suthers",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/suthers-card.jpg",
+      "backText": "Professor Suthers teaches ICS 668 Social Informatics. His research interests are: Technology Enhanced Learning, Human-Computer Interaction, Social Informatics, and Cognitive, social and computational perspectives on designing and evaluating software for learning, collaboration, and community.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Depeng Li",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/li-card.jpg",
+      "backText": "Professor Li teaches ICS 141 and ICS 241 (Discrete Math for Computer Science I and II). He is an associate professor and a member of the ASECOLab.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Scott Robertson",
+      "rarity": "4",
+      "border": "/images/4star-border.png",
+      "profImage": "/images/robertson-card.jpg",
+      "backText": "Scott Robertson is a professor and is currently the ICS Department Chair. Fun Fact: He was a child actor, appearing on The Brady Bunch.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+    {
+      "profName": "Chad Morita",
+      "rarity": "4",
+      "border": "/images/4star-border.png",
+      "profImage": "/images/morita-card.jpg",
+      "backText": "Chad Morita is a first year instructor, teaching ICS 314 Software Engineering and 332 Operating Systems.",
+      "owner": "testadmin",
+      "isForSale": false
+    },
+
+
+
+    {
+      "profName": "Dan Port",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/port-card.jpeg",
+      "backText": "He teaches ICS 314 Software Engineering and got his Ph.D. in Mathematics and Theoretical Computer Science at MIT.",
+      "owner": "testjohn",
       "isForSale": true
     },
     {
       "profName": "Edo Biagioni",
-      "rarity": "2",
-      "border": "/images/2star-border.png",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
       "profImage": "/images/edo-card.jpg",
       "backText": "Edo teaches ICS 211 Intro to CS II (Data Structures). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
-      "owner": "testJohn",
+      "owner": "testjohn",
+      "isForSale": true
+    },
+    {
+      "profName": "Edo Biagioni",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/edo-card.jpg",
+      "backText": "Edo teaches ICS 491 Special Topics (Blockchain and Cryptocurrencies). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
+      "owner": "testjohn",
+      "isForSale": true
+    },
+    {
+      "profName": "Peter-Michael Seidel",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/seidel-card.jpg",
+      "backText": "Peter-Michael Seidel teaches ICS 355 (Security and Trust I) and ICS 331 (Logic Design and Microprocessors). He is an associate professor and a member of the ASECOLab.",
+      "owner": "testjohn",
       "isForSale": true
     },
     {
       "profName": "Philip Johnson",
-      "rarity": "3",
-      "border": "/images/3star-border.png",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
       "profImage": "/images/johnson-card.jpg",
       "backText": "Professor Johnson teaches ICS 314 Software Engineering. Fun Fact: He is the Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.",
-      "owner": "testJohn",
-      "isForSale": false
-    },
-    {
-      "profName": "Cam Moore",
-      "rarity": "3",
-      "border": "/images/3star-border.png",
-      "profImage": "/images/moore-card.jpeg",
-      "backText": "Cam Moore teaches ICS 314. A project he's worked on is RadGrad.",
-      "owner": "testAdmin",
+      "owner": "testjohn",
       "isForSale": true
     },
     {
-      "profName": "Scott Robertson",
-      "rarity": "1",
-      "border": "/images/1star-border.png",
-      "profImage": "/images/robertson-card.jpeg",
-      "backText": "Professor Robertson teaches ICS 111. Fun Fact: He was a child actor, appearing on The Brady Bunch.",
-      "owner": "testAdmin",
-      "isForSale": false
+      "profName": "Cam Moore",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/moore-card.jpeg",
+      "backText": "Cam Moore teaches ICS 314. A project he's worked on is RadGrad.",
+      "owner": "testjohn",
+      "isForSale": true
     },
     {
-      "profName": "Chad Morita",
-      "rarity": "3",
-      "border": "/images/3star-border.png",
-      "profImage": "/images/morita-card.jpg",
-      "backText": "Chad Morita is a first year instructor, teaching ICS 314 Software Engineering and 332 Operating Systems.",
-      "owner": "testAdmin",
+      "profName": "Cam Moore",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/moore-card.jpeg",
+      "backText": "Cam Moore teaches ICS 111. A project he's worked on is RadGrad.",
+      "owner": "testjohn",
       "isForSale": true
     },
     {
       "profName": "Kim Binsted",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/binsted-card.jpg",
+      "backText": "Professor Binsted teaches ICS 461 Artificial Intelligence. Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as \"What do you call a Martian who drinks beer? An ale-ien!\".",
+      "owner": "testjohn",
+      "isForSale": true
+    },
+    {
+      "profName": "Nodari Sitchinava",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/sitchinava-card.jpg",
+      "backText": "Professor Sitchinava teaches ICS 311 Algorithms. His research focuses on algorithms for modern parallel systems. He is also interested in computational geometry and graph algorithms.",
+      "owner": "testjohn",
+      "isForSale": true
+    },
+    {
+      "profName": "Dan Suthers",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/suthers-card.jpg",
+      "backText": "Professor Suthers teaches ICS 668 Social Informatics. His research interests are: Technology Enhanced Learning, Human-Computer Interaction, Social Informatics, and Cognitive, social and computational perspectives on designing and evaluating software for learning, collaboration, and community.",
+      "owner": "testjohn",
+      "isForSale": true
+    },
+    {
+      "profName": "Depeng Li",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/li-card.jpg",
+      "backText": "Professor Li teaches ICS 141 and ICS 241 (Discrete Math for Computer Science I and II). He is an associate professor and a member of the ASECOLab.",
+      "owner": "testjohn",
+      "isForSale": true
+    },
+    {
+      "profName": "Scott Robertson",
       "rarity": "4",
       "border": "/images/4star-border.png",
-      "profImage": "/images/binsted-card.jpeg",
-      "backText": "Professor Binsted teaches ICS 461 Artificial Intelligence. Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as \"What do you call a Martian who drinks beer? An ale-ien!\".",
-      "owner": "testAdmin",
-      "isForSale": false
+      "profImage": "/images/robertson-card.jpg",
+      "backText": "Scott Robertson is a professor and is currently the ICS Department Chair. Fun Fact: He was a child actor, appearing on The Brady Bunch.",
+      "owner": "testjohn",
+      "isForSale": true
+    },
+    {
+      "profName": "Chad Morita",
+      "rarity": "4",
+      "border": "/images/4star-border.png",
+      "profImage": "/images/morita-card.jpg",
+      "backText": "Chad Morita is a first year instructor, teaching ICS 314 Software Engineering and 332 Operating Systems.",
+      "owner": "testjohn",
+      "isForSale": true
     }
   ]
 }

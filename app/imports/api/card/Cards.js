@@ -18,7 +18,7 @@ class CardsCollection {
       rarity: Number, // dependent on some factors
       profImage: String, // link to image //I think this MUST be SQUARE
       border: String, // border thing
-      backImage: String, // bg image if nesc - does not work rn
+      // backImage: String, // bg image if nesc - does not work rn
       backText: String, // Prof Johnson teaches ICS 314, and built OpenPowerQuality
       owner: String, // user that the card belongs to
       // copies: Number, // how many copies of the card the user has

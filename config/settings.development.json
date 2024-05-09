@@ -10,6 +10,11 @@
       "role": "admin"
     },
     {
+      "username": "encyclopedia",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
       "username": "testJohn",
       "password": "changeme"
     }
@@ -21,8 +26,70 @@
       "rarity": "3",
       "border": "/images/3star-border.png",
       "profImage": "/images/morita-card.jpg",
-      "backImage": "/images/morita-card.jpg",
-      "backText": "on da back: Chad Morita is a first year instructor yada yada",
+      "backText": "Chad Morita is a first year instructor, teaching ICS 314 Software Engineering and 332 Operating Systems.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Dan Port",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/port-card.jpeg",
+      "backText": "He teaches ICS 314 Software Engineering and got his Ph.D. in Mathematics and Theoretical Computer Science at MIT.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Edo Biagioni",
+      "rarity": "2",
+      "border": "/images/2star-border.png",
+      "profImage": "/images/edo-card.jpg",
+      "backText": "Edo teaches ICS 211 Intro to CS II (Data Structures). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Philip Johnson",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/johnson-card.jpg",
+      "backText": "Professor Johnson teaches ICS 314 Software Engineering. Fun Fact: He is the Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Cam Moore",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/moore-card.jpeg",
+      "backText": "Cam Moore teaches ICS 314. A project he's worked on is RadGrad.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Scott Robertson",
+      "rarity": "1",
+      "border": "/images/1star-border.png",
+      "profImage": "/images/robertson-card.jpeg",
+      "backText": "Professor Robertson teaches ICS 111. Fun Fact: He was a child actor, appearing on The Brady Bunch.",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Kim Binsted",
+      "rarity": "4",
+      "border": "/images/4star-border.png",
+      "profImage": "/images/binsted-card.jpeg",
+      "backText": "Professor Binsted teaches ICS 461 Artificial Intelligence. Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as \"What do you call a Martian who drinks beer? An ale-ien!\".",
+      "owner": "encyclopedia",
+      "isForSale": false
+    },
+    {
+      "profName": "Chad Morita",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/morita-card.jpg",
+      "backText": "Chad Morita is a first year instructor, teaching ICS 314 Software Engineering and 332 Operating Systems.",
       "owner": "testJohn",
       "isForSale": true
     },
@@ -31,58 +98,52 @@
       "rarity": "2",
       "border": "/images/2star-border.png",
       "profImage": "/images/edo-card.jpg",
-      "backImage": "/images/edo-card.jpg",
-      "backText": "teaches ICS 211",
+      "backText": "Edo teaches ICS 211 Intro to CS II (Data Structures). He is interested in networking, particularly decentralized and ad-hoc networking, often with security aspects.",
       "owner": "testJohn",
       "isForSale": true
-    },
-    {
-      "profName": "Lucas Horsman",
-      "rarity": "4",
-      "border": "/images/4star-border.png",
-      "profImage": "/images/edo-card.jpg",
-      "backImage": "/images/edo-card.jpg",
-      "backText": "Lucas is not a professor",
-      "owner": "testJohn",
-      "isForSale": false
     },
     {
       "profName": "Philip Johnson",
       "rarity": "3",
       "border": "/images/3star-border.png",
       "profImage": "/images/johnson-card.jpg",
-      "backImage": "/images/johnson-card.jpg",
-      "backText": "teaches ICS 314",
-      "owner": "testAdmin",
-      "isForSale": true
+      "backText": "Professor Johnson teaches ICS 314 Software Engineering. Fun Fact: He is the Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.",
+      "owner": "testJohn",
+      "isForSale": false
     },
     {
       "profName": "Cam Moore",
       "rarity": "3",
       "border": "/images/3star-border.png",
-      "profImage": "/images/johnson-card.jpg",
-      "backImage": "/images/johnson-card.jpg",
-      "backText": "teaches ICS 314",
+      "profImage": "/images/moore-card.jpeg",
+      "backText": "Cam Moore teaches ICS 314. A project he's worked on is RadGrad.",
       "owner": "testAdmin",
-      "isForSale": false
+      "isForSale": true
     },
     {
       "profName": "Scott Robertson",
       "rarity": "1",
       "border": "/images/1star-border.png",
-      "profImage": "/images/johnson-card.jpg",
-      "backImage": "/images/johnson-card.jpg",
-      "backText": "teaches ICS 111",
+      "profImage": "/images/robertson-card.jpeg",
+      "backText": "Professor Robertson teaches ICS 111. Fun Fact: He was a child actor, appearing on The Brady Bunch.",
       "owner": "testAdmin",
       "isForSale": false
     },
     {
-      "profName": "Depeng Li",
-      "rarity": "1",
-      "border": "/images/1star-border.png",
-      "profImage": "/images/johnson-card.jpg",
-      "backImage": "/images/johnson-card.jpg",
-      "backText": "teaches ICS 141",
+      "profName": "Chad Morita",
+      "rarity": "3",
+      "border": "/images/3star-border.png",
+      "profImage": "/images/morita-card.jpg",
+      "backText": "Chad Morita is a first year instructor, teaching ICS 314 Software Engineering and 332 Operating Systems.",
+      "owner": "testAdmin",
+      "isForSale": true
+    },
+    {
+      "profName": "Kim Binsted",
+      "rarity": "4",
+      "border": "/images/4star-border.png",
+      "profImage": "/images/binsted-card.jpeg",
+      "backText": "Professor Binsted teaches ICS 461 Artificial Intelligence. Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as \"What do you call a Martian who drinks beer? An ale-ien!\".",
       "owner": "testAdmin",
       "isForSale": false
     }

@@ -60,28 +60,24 @@ const Landing = () => {
 
       <hr className="style-two" />
 
-      <Row className="align-middle text-center">
-        <Col />
-        <Col sm={2} className="d-flex flex-column justify-content-center align-items-center">
+      <Row className="align-middle text-center d-flex justify-content-center">
+        <Col className="px-5 mx-5 d-flex flex-column justify-content-center align-items-center">
           <h4>Collect cards, trade with friends, and learn more about your UH Manoa professors!</h4>
           <Button href="/signup" variant="dark" className="my-2" size="lg">Join Today!</Button>
         </Col>
-
-        { // Display 3 random cards from Admins collection
-          cards.map((prof, index) => (
-            <Col key={index} sm={3} className="text-center p-2">
-              <ProfCard profCard={prof} />
-            </Col>
-          ))
-        }
-        <Col />
+        <Col className="mx-5 d-flex justify-content-center">
+          { // Display 3 random cards from Admins collection
+            cards.map((prof, index) => (
+              <div className="m-3" key={index} style={{ width: '300px', height: '400px' }}>
+                <ProfCard profCard={prof} />
+              </div>
+            ))
+          }
+        </Col>
       </Row>
 
       <Row className="align-middle text-center">
-        <Col sm={4} />
-        <Col sm={6}>
-          <h5 className="text-muted fw-light">click on the cards to learn more about each professor!</h5>
-        </Col>
+        <h5 className="text-muted fw-light">Click on the cards to learn more about each professor!</h5>
       </Row>
 
     </Container>

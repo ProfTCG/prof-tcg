@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Cards } from '../../api/card/Cards';
@@ -59,6 +60,25 @@ Meteor.methods({
     console.log('giftRandom');
     check(userId, String);
 
+    const shuffleArray = (array) => {
+      const shuffledArray = [...array]; // Create a new array to hold shuffled elements
+      let currentIndex = shuffledArray.length;
+      let temporaryValue;
+      let randomIndex;
+
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // Swap elements between currentIndex and randomIndex
+        temporaryValue = shuffledArray[currentIndex];
+        shuffledArray[currentIndex] = shuffledArray[randomIndex];
+        shuffledArray[randomIndex] = temporaryValue;
+      }
+
+      return shuffledArray;
+    };
+
     // Ensure the user exists
     const user = Meteor.users.findOne(userId);
     if (!user) {
@@ -67,6 +87,7 @@ Meteor.methods({
 
     // // Check if the user has received a gift in the last 24 hours
     const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    console.log(user.lastGiftReceived);
     if (user.lastGiftReceived && user.lastGiftReceived > oneDayAgo) {
       console.log('date/time err');
       // alert user on front end
@@ -76,8 +97,11 @@ Meteor.methods({
     // Find a random card owned by the admin
     // this is the testing version The idea is to 'trade' a card from the admin to the user
     // right now it alwatys gifts the same card not sure how to fix
-    const adminCard = Cards.collection.findOne({ owner: 'testAdmin' });
-
+    const docs = Cards.collection.find({ owner: 'testAdmin' }).fetch();
+    // Pick 3 random cards
+    const adminCardArr = shuffleArray(docs).slice(0, 1); // shuffleArray is a function to shuffle the array
+    const adminCard = adminCardArr[0];
+    // const adminCard = Cards.collection.findOne({ owner: 'testAdmin' });
     if (!adminCard) {
       throw new Meteor.Error('no-cards', 'No cards available to gift.');
     }
@@ -86,6 +110,7 @@ Meteor.methods({
     const newCard = {
       ...adminCard,
       owner: userName,
+      isForSale: false,
     };
 
     // Remove the _id property from newCard, because MongoDB will automatically create a new _id for the new document

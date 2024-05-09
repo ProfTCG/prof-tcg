@@ -59,7 +59,7 @@ const YourCards = () => {
       <Row className="py-4">
         <Col xs={2} />
         <Col>
-          <p> Here you can find all the cards you own, and add them to the marketplace</p>
+          <p> Here you can find all the cards you own, and add them to the marketplace. If there are no cards here, go to Card Packs to get one!</p>
         </Col>
         <Col xs={2} />
       </Row>

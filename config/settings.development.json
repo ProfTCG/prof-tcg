@@ -5,7 +5,7 @@
   },
   "defaultAccounts": [
     {
-      "username": "testAdmin",
+      "username": "testadmin",
       "password": "changeme",
       "role": "admin"
     },
@@ -15,7 +15,7 @@
       "role": "admin"
     },
     {
-      "username": "testJohn",
+      "username": "testjohn",
       "password": "changeme"
     }
   ],

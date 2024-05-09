@@ -44,7 +44,7 @@ const YourCards = () => {
             {filteredCards.map((card) => (
               <div className="m-3" key={card._id} style={{ width: '300px', height: '400px' }}>
                 <ProfCard profCard={card} />
-                <Button variant="primary" onClick={() => addToMarketplace(card)}>Add to Marketplace</Button>
+                <Button variant="primary" onClick={() => addToMarketplace(card)}>{!card.isForSale ? 'Add to marketplace' : 'Remove from marketplace'}</Button>
               </div>
             ))}
           </Row>

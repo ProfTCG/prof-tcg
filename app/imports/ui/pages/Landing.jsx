@@ -34,7 +34,7 @@ const Landing = () => {
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Retrieve admin cards docs
-    const docs = Cards.collection.find({ owner: 'testAdmin' }).fetch();
+    const docs = Cards.collection.find({ owner: 'encyclopedia' }).fetch();
     // Pick 3 random cards
     const random = shuffleArray(docs).slice(0, 3); // shuffleArray is a function to shuffle the array
     return {
